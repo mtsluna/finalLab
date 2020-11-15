@@ -69,10 +69,29 @@
             this.clientes = new System.Windows.Forms.TabPage();
             this.administradores = new System.Windows.Forms.TabPage();
             this.autores = new System.Windows.Forms.TabPage();
+            this.resetAutor = new System.Windows.Forms.Button();
+            this.guardarAutor = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.buscarAutor = new System.Windows.Forms.Button();
+            this.autor0 = new System.Windows.Forms.TextBox();
+            this.buscadorAutor = new System.Windows.Forms.TextBox();
+            this.autor2 = new System.Windows.Forms.TextBox();
+            this.autoresDataGrid = new System.Windows.Forms.DataGridView();
+            this.ID2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Editar2 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Eliminar2 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.Nombre = new System.Windows.Forms.Label();
+            this.autor1 = new System.Windows.Forms.TextBox();
             this.logout = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.libros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.librosDataGrid)).BeginInit();
+            this.autores.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.autoresDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -130,7 +149,6 @@
             this.libros.TabIndex = 2;
             this.libros.Text = "Libros";
             this.libros.UseVisualStyleBackColor = true;
-            this.libro4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressIsNumber);
             // 
             // resetLibro
             // 
@@ -232,6 +250,7 @@
             this.libro4.Name = "libro4";
             this.libro4.Size = new System.Drawing.Size(103, 22);
             this.libro4.TabIndex = 14;
+            this.libro4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressIsNumber);
             // 
             // libro3
             // 
@@ -467,12 +486,184 @@
             // 
             // autores
             // 
+            this.autores.Controls.Add(this.resetAutor);
+            this.autores.Controls.Add(this.guardarAutor);
+            this.autores.Controls.Add(this.label11);
+            this.autores.Controls.Add(this.buscarAutor);
+            this.autores.Controls.Add(this.autor0);
+            this.autores.Controls.Add(this.buscadorAutor);
+            this.autores.Controls.Add(this.autor2);
+            this.autores.Controls.Add(this.autoresDataGrid);
+            this.autores.Controls.Add(this.label12);
+            this.autores.Controls.Add(this.label14);
+            this.autores.Controls.Add(this.Nombre);
+            this.autores.Controls.Add(this.autor1);
             this.autores.Location = new System.Drawing.Point(4, 25);
             this.autores.Name = "autores";
             this.autores.Size = new System.Drawing.Size(1422, 383);
             this.autores.TabIndex = 4;
             this.autores.Text = "Autores";
             this.autores.UseVisualStyleBackColor = true;
+            // 
+            // resetAutor
+            // 
+            this.resetAutor.Location = new System.Drawing.Point(1228, 346);
+            this.resetAutor.Name = "resetAutor";
+            this.resetAutor.Size = new System.Drawing.Size(181, 23);
+            this.resetAutor.TabIndex = 33;
+            this.resetAutor.Text = "Reset";
+            this.resetAutor.UseVisualStyleBackColor = true;
+            this.resetAutor.Click += new System.EventHandler(this.resetAutor_Click);
+            // 
+            // guardarAutor
+            // 
+            this.guardarAutor.Location = new System.Drawing.Point(1039, 346);
+            this.guardarAutor.Name = "guardarAutor";
+            this.guardarAutor.Size = new System.Drawing.Size(181, 23);
+            this.guardarAutor.TabIndex = 32;
+            this.guardarAutor.Text = "Guardar";
+            this.guardarAutor.UseVisualStyleBackColor = true;
+            this.guardarAutor.Click += new System.EventHandler(this.guardarAutor_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(1296, 15);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(25, 17);
+            this.label11.TabIndex = 31;
+            this.label11.Text = "ID:";
+            // 
+            // buscarAutor
+            // 
+            this.buscarAutor.Location = new System.Drawing.Point(3, 346);
+            this.buscarAutor.Name = "buscarAutor";
+            this.buscarAutor.Size = new System.Drawing.Size(238, 23);
+            this.buscarAutor.TabIndex = 22;
+            this.buscarAutor.Text = "Buscar";
+            this.buscarAutor.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.buscarAutor.UseVisualStyleBackColor = true;
+            this.buscarAutor.Click += new System.EventHandler(this.buscarAutor_Click);
+            // 
+            // autor0
+            // 
+            this.autor0.Enabled = false;
+            this.autor0.Location = new System.Drawing.Point(1327, 12);
+            this.autor0.Name = "autor0";
+            this.autor0.Size = new System.Drawing.Size(82, 22);
+            this.autor0.TabIndex = 30;
+            // 
+            // buscadorAutor
+            // 
+            this.buscadorAutor.Location = new System.Drawing.Point(247, 346);
+            this.buscadorAutor.Name = "buscadorAutor";
+            this.buscadorAutor.Size = new System.Drawing.Size(781, 22);
+            this.buscadorAutor.TabIndex = 21;
+            // 
+            // autor2
+            // 
+            this.autor2.Location = new System.Drawing.Point(1128, 95);
+            this.autor2.Name = "autor2";
+            this.autor2.Size = new System.Drawing.Size(281, 22);
+            this.autor2.TabIndex = 29;
+            // 
+            // autoresDataGrid
+            // 
+            this.autoresDataGrid.AllowUserToAddRows = false;
+            this.autoresDataGrid.AllowUserToDeleteRows = false;
+            this.autoresDataGrid.AllowUserToOrderColumns = true;
+            this.autoresDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.autoresDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID2,
+            this.Nombre2,
+            this.Apellido,
+            this.Editar2,
+            this.Eliminar2});
+            this.autoresDataGrid.Location = new System.Drawing.Point(3, 3);
+            this.autoresDataGrid.Name = "autoresDataGrid";
+            this.autoresDataGrid.RowHeadersWidth = 51;
+            this.autoresDataGrid.RowTemplate.Height = 24;
+            this.autoresDataGrid.Size = new System.Drawing.Size(1025, 334);
+            this.autoresDataGrid.TabIndex = 1;
+            this.autoresDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.autoresDataGrid_CellContentClick);
+            // 
+            // ID2
+            // 
+            this.ID2.DataPropertyName = "id";
+            this.ID2.HeaderText = "ID";
+            this.ID2.MinimumWidth = 6;
+            this.ID2.Name = "ID2";
+            this.ID2.ReadOnly = true;
+            this.ID2.Width = 125;
+            // 
+            // Nombre2
+            // 
+            this.Nombre2.DataPropertyName = "nombre";
+            this.Nombre2.HeaderText = "Nombre";
+            this.Nombre2.MinimumWidth = 6;
+            this.Nombre2.Name = "Nombre2";
+            this.Nombre2.Width = 125;
+            // 
+            // Apellido
+            // 
+            this.Apellido.DataPropertyName = "apellido";
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.MinimumWidth = 6;
+            this.Apellido.Name = "Apellido";
+            this.Apellido.Width = 125;
+            // 
+            // Editar2
+            // 
+            this.Editar2.HeaderText = "Editar";
+            this.Editar2.MinimumWidth = 6;
+            this.Editar2.Name = "Editar2";
+            this.Editar2.Text = "Editar";
+            this.Editar2.UseColumnTextForButtonValue = true;
+            this.Editar2.Width = 125;
+            // 
+            // Eliminar2
+            // 
+            this.Eliminar2.HeaderText = "Eliminar";
+            this.Eliminar2.MinimumWidth = 6;
+            this.Eliminar2.Name = "Eliminar2";
+            this.Eliminar2.Text = "Eliminar";
+            this.Eliminar2.UseColumnTextForButtonValue = true;
+            this.Eliminar2.Width = 125;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(1036, 95);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(62, 17);
+            this.label12.TabIndex = 28;
+            this.label12.Text = "Apellido:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(1034, 9);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(179, 25);
+            this.label14.TabIndex = 26;
+            this.label14.Text = "Carga de autores";
+            // 
+            // Nombre
+            // 
+            this.Nombre.AutoSize = true;
+            this.Nombre.Location = new System.Drawing.Point(1036, 54);
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Size = new System.Drawing.Size(62, 17);
+            this.Nombre.TabIndex = 27;
+            this.Nombre.Text = "Nombre:";
+            // 
+            // autor1
+            // 
+            this.autor1.Location = new System.Drawing.Point(1128, 54);
+            this.autor1.Name = "autor1";
+            this.autor1.Size = new System.Drawing.Size(281, 22);
+            this.autor1.TabIndex = 25;
             // 
             // logout
             // 
@@ -496,6 +687,9 @@
             this.libros.ResumeLayout(false);
             this.libros.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.librosDataGrid)).EndInit();
+            this.autores.ResumeLayout(false);
+            this.autores.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.autoresDataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -544,6 +738,23 @@
         public System.Windows.Forms.Label label10;
         public System.Windows.Forms.TextBox libro0;
         public System.Windows.Forms.Button resetLibro;
+        public System.Windows.Forms.Label label11;
+        public System.Windows.Forms.Button buscarAutor;
+        public System.Windows.Forms.TextBox autor0;
+        public System.Windows.Forms.TextBox buscadorAutor;
+        public System.Windows.Forms.TextBox autor2;
+        public System.Windows.Forms.DataGridView autoresDataGrid;
+        public System.Windows.Forms.Label label12;
+        public System.Windows.Forms.Label label14;
+        public System.Windows.Forms.Label Nombre;
+        public System.Windows.Forms.TextBox autor1;
+        public System.Windows.Forms.Button resetAutor;
+        public System.Windows.Forms.Button guardarAutor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+        private System.Windows.Forms.DataGridViewButtonColumn Editar2;
+        private System.Windows.Forms.DataGridViewButtonColumn Eliminar2;
     }
 }
 

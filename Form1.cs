@@ -25,9 +25,10 @@ namespace final
             InitializeComponent();
 
             refreshLibros();
+            refreshAutores();
 
             //autores en libros
-            autoresEnLibros.DataSource = autorController.FillAll();
+            autoresEnLibros.DataSource = autorController.FillAll(true);
             autoresEnLibros.DisplayMember = "nombre";
             autoresEnLibros.ValueMember = "id";
         }
@@ -45,12 +46,31 @@ namespace final
                 Console.WriteLine(e.RowIndex);
                 switch (e.ColumnIndex)
                 {
-                    case 9:
-                        setDataToEditLibro(e.RowIndex);
+                    case 3:
+                        setDataToEditAutor(e.RowIndex);
                         break;
-                    case 10:
+                    case 4:
                         deleteLibro(e.RowIndex);
                         refreshLibros();
+                        break;
+                }
+            }
+        }
+
+        private void autoresDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                Console.WriteLine(e.ColumnIndex);
+                Console.WriteLine(e.RowIndex);
+                switch (e.ColumnIndex)
+                {
+                    case 3:
+                        setDataToEditAutor(e.RowIndex);
+                        break;
+                    case 4:
+                        deleteAutor(e.RowIndex);
+                        refreshAutores();
                         break;
                 }
             }
@@ -70,10 +90,24 @@ namespace final
             libro8.Text = row.Cells[8].Value.ToString();
         }
 
+        public void setDataToEditAutor(int index)
+        {
+            DataGridViewRow row = autoresDataGrid.Rows[index];
+            autor0.Text = row.Cells[0].Value.ToString();
+            autor1.Text = row.Cells[1].Value.ToString();
+            autor2.Text = row.Cells[2].Value.ToString();
+        }
+
         public void deleteLibro(int index)
         {
             DataGridViewRow row = librosDataGrid.Rows[index];
             libroController.deleteBook(Int32.Parse(row.Cells[0].Value.ToString()));
+        }
+
+        public void deleteAutor(int index)
+        {
+            DataGridViewRow row = autoresDataGrid.Rows[index];
+            autorController.deleteAutor(Int32.Parse(row.Cells[0].Value.ToString()));
         }
 
         public void refreshLibros()
@@ -82,6 +116,14 @@ namespace final
             librosDataGrid.AutoGenerateColumns = false;
             librosDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             librosDataGrid.DataSource = libroController.FillAllBooks();
+        }
+
+        public void refreshAutores()
+        {
+            //tabla de libros
+            autoresDataGrid.AutoGenerateColumns = false;
+            autoresDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            autoresDataGrid.DataSource = autorController.FillAll(false);
         }
 
         public void label1_Click_1(object sender, EventArgs e)
@@ -162,5 +204,35 @@ namespace final
             }
         }
 
+        private void buscarAutor_Click(object sender, EventArgs e)
+        {
+            autoresDataGrid.AutoGenerateColumns = false;
+            autoresDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            autoresDataGrid.DataSource = autorController.FillAllAutorByText(buscadorAutor.Text);
+        }
+
+        private void resetAutor_Click(object sender, EventArgs e)
+        {
+            autor0.Text = "";
+            autor1.Text = "";
+            autor2.Text = "";
+        }
+
+        private void guardarAutor_Click(object sender, EventArgs e)
+        {
+            Autor autor = new Autor();
+            autor.nombre = autor1.Text;
+            autor.apellido = autor2.Text;
+            if (autor0.Text.Equals(""))
+            {
+                autorController.instertAutor(autor);
+            }
+            else
+            {
+                autor.id = Int16.Parse(autor0.Text);
+                autorController.updateAutor(autor);
+            }
+            refreshAutores();
+        }
     }
 }
