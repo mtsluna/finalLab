@@ -87,11 +87,42 @@
             this.Nombre = new System.Windows.Forms.Label();
             this.autor1 = new System.Windows.Forms.TextBox();
             this.logout = new System.Windows.Forms.Button();
+            this.clientesDataGrid = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.buscadorCliente = new System.Windows.Forms.TextBox();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechadeNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cliente0 = new System.Windows.Forms.TextBox();
+            this.cliente6 = new System.Windows.Forms.TextBox();
+            this.cliente3 = new System.Windows.Forms.TextBox();
+            this.cliente5 = new System.Windows.Forms.DateTimePicker();
+            this.cliente2 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.cliente1 = new System.Windows.Forms.TextBox();
+            this.clienteReset = new System.Windows.Forms.Button();
+            this.clienteGuardar = new System.Windows.Forms.Button();
+            this.cliente4 = new System.Windows.Forms.TextBox();
             this.tabControl.SuspendLayout();
             this.libros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.librosDataGrid)).BeginInit();
+            this.clientes.SuspendLayout();
             this.autores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.autoresDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -200,7 +231,7 @@
             this.buscarLibros.Name = "buscarLibros";
             this.buscarLibros.Size = new System.Drawing.Size(238, 23);
             this.buscarLibros.TabIndex = 20;
-            this.buscarLibros.Text = "Buscar";
+            this.buscarLibros.Text = "Buscar por Titulo";
             this.buscarLibros.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.buscarLibros.UseVisualStyleBackColor = true;
             this.buscarLibros.Click += new System.EventHandler(this.buscarLibros_Click);
@@ -467,6 +498,26 @@
             // 
             // clientes
             // 
+            this.clientes.Controls.Add(this.cliente4);
+            this.clientes.Controls.Add(this.clienteReset);
+            this.clientes.Controls.Add(this.clienteGuardar);
+            this.clientes.Controls.Add(this.label13);
+            this.clientes.Controls.Add(this.cliente0);
+            this.clientes.Controls.Add(this.cliente6);
+            this.clientes.Controls.Add(this.cliente3);
+            this.clientes.Controls.Add(this.cliente5);
+            this.clientes.Controls.Add(this.cliente2);
+            this.clientes.Controls.Add(this.label16);
+            this.clientes.Controls.Add(this.label17);
+            this.clientes.Controls.Add(this.label18);
+            this.clientes.Controls.Add(this.label20);
+            this.clientes.Controls.Add(this.label21);
+            this.clientes.Controls.Add(this.label22);
+            this.clientes.Controls.Add(this.label23);
+            this.clientes.Controls.Add(this.cliente1);
+            this.clientes.Controls.Add(this.button1);
+            this.clientes.Controls.Add(this.buscadorCliente);
+            this.clientes.Controls.Add(this.clientesDataGrid);
             this.clientes.Location = new System.Drawing.Point(4, 25);
             this.clientes.Name = "clientes";
             this.clientes.Padding = new System.Windows.Forms.Padding(3);
@@ -540,7 +591,7 @@
             this.buscarAutor.Name = "buscarAutor";
             this.buscarAutor.Size = new System.Drawing.Size(238, 23);
             this.buscarAutor.TabIndex = 22;
-            this.buscarAutor.Text = "Buscar";
+            this.buscarAutor.Text = "Buscar por Nombre y Apellido";
             this.buscarAutor.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.buscarAutor.UseVisualStyleBackColor = true;
             this.buscarAutor.Click += new System.EventHandler(this.buscarAutor_Click);
@@ -674,6 +725,265 @@
             this.logout.Text = "SALIR";
             this.logout.UseVisualStyleBackColor = true;
             // 
+            // clientesDataGrid
+            // 
+            this.clientesDataGrid.AllowUserToAddRows = false;
+            this.clientesDataGrid.AllowUserToDeleteRows = false;
+            this.clientesDataGrid.AllowUserToOrderColumns = true;
+            this.clientesDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.clientesDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.domicilio,
+            this.Telefono,
+            this.FechadeNacimiento,
+            this.dni,
+            this.dataGridViewButtonColumn1,
+            this.dataGridViewButtonColumn2});
+            this.clientesDataGrid.Location = new System.Drawing.Point(3, 3);
+            this.clientesDataGrid.Name = "clientesDataGrid";
+            this.clientesDataGrid.RowHeadersWidth = 51;
+            this.clientesDataGrid.RowTemplate.Height = 24;
+            this.clientesDataGrid.Size = new System.Drawing.Size(1025, 334);
+            this.clientesDataGrid.TabIndex = 3;
+            this.clientesDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clientesDataGrid_CellContentClick);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(3, 346);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(238, 23);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Buscar por DNI";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // buscadorCliente
+            // 
+            this.buscadorCliente.Location = new System.Drawing.Point(247, 346);
+            this.buscadorCliente.Name = "buscadorCliente";
+            this.buscadorCliente.Size = new System.Drawing.Size(781, 22);
+            this.buscadorCliente.TabIndex = 21;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "nombre";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "apellido";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Apellido";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // domicilio
+            // 
+            this.domicilio.DataPropertyName = "domicilio";
+            this.domicilio.HeaderText = "Domicilio";
+            this.domicilio.MinimumWidth = 6;
+            this.domicilio.Name = "domicilio";
+            this.domicilio.Width = 125;
+            // 
+            // Telefono
+            // 
+            this.Telefono.DataPropertyName = "telefono";
+            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.MinimumWidth = 6;
+            this.Telefono.Name = "Telefono";
+            this.Telefono.Width = 125;
+            // 
+            // FechadeNacimiento
+            // 
+            this.FechadeNacimiento.DataPropertyName = "fechaNacimiento";
+            this.FechadeNacimiento.HeaderText = "Fecha de Nacimiento";
+            this.FechadeNacimiento.MinimumWidth = 6;
+            this.FechadeNacimiento.Name = "FechadeNacimiento";
+            this.FechadeNacimiento.Width = 125;
+            // 
+            // dni
+            // 
+            this.dni.DataPropertyName = "dni";
+            this.dni.HeaderText = "DNI";
+            this.dni.MinimumWidth = 6;
+            this.dni.Name = "dni";
+            this.dni.Width = 125;
+            // 
+            // dataGridViewButtonColumn1
+            // 
+            this.dataGridViewButtonColumn1.HeaderText = "Editar";
+            this.dataGridViewButtonColumn1.MinimumWidth = 6;
+            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
+            this.dataGridViewButtonColumn1.Text = "Editar";
+            this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
+            this.dataGridViewButtonColumn1.Width = 125;
+            // 
+            // dataGridViewButtonColumn2
+            // 
+            this.dataGridViewButtonColumn2.HeaderText = "Eliminar";
+            this.dataGridViewButtonColumn2.MinimumWidth = 6;
+            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
+            this.dataGridViewButtonColumn2.Text = "Eliminar";
+            this.dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
+            this.dataGridViewButtonColumn2.Width = 125;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(1296, 15);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(25, 17);
+            this.label13.TabIndex = 43;
+            this.label13.Text = "ID:";
+            // 
+            // cliente0
+            // 
+            this.cliente0.Enabled = false;
+            this.cliente0.Location = new System.Drawing.Point(1327, 12);
+            this.cliente0.Name = "cliente0";
+            this.cliente0.Size = new System.Drawing.Size(82, 22);
+            this.cliente0.TabIndex = 42;
+            // 
+            // cliente6
+            // 
+            this.cliente6.Location = new System.Drawing.Point(1128, 258);
+            this.cliente6.Name = "cliente6";
+            this.cliente6.Size = new System.Drawing.Size(281, 22);
+            this.cliente6.TabIndex = 37;
+            // 
+            // cliente3
+            // 
+            this.cliente3.Location = new System.Drawing.Point(1128, 136);
+            this.cliente3.Name = "cliente3";
+            this.cliente3.Size = new System.Drawing.Size(281, 22);
+            this.cliente3.TabIndex = 36;
+            // 
+            // cliente5
+            // 
+            this.cliente5.Location = new System.Drawing.Point(1146, 217);
+            this.cliente5.Name = "cliente5";
+            this.cliente5.Size = new System.Drawing.Size(263, 22);
+            this.cliente5.TabIndex = 35;
+            // 
+            // cliente2
+            // 
+            this.cliente2.Location = new System.Drawing.Point(1128, 95);
+            this.cliente2.Name = "cliente2";
+            this.cliente2.Size = new System.Drawing.Size(281, 22);
+            this.cliente2.TabIndex = 34;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(1036, 222);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(123, 21);
+            this.label16.TabIndex = 33;
+            this.label16.Text = "F. Nacimiento:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(1036, 258);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(44, 21);
+            this.label17.TabIndex = 32;
+            this.label17.Text = "DNI:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(1036, 137);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(85, 21);
+            this.label18.TabIndex = 31;
+            this.label18.Text = "Domicilio:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(1036, 178);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(85, 21);
+            this.label20.TabIndex = 29;
+            this.label20.Text = "Telefono:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(1036, 95);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(78, 21);
+            this.label21.TabIndex = 28;
+            this.label21.Text = "Apellido:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(1036, 54);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(78, 21);
+            this.label22.TabIndex = 27;
+            this.label22.Text = "Nombre:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(1034, 9);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(226, 31);
+            this.label23.TabIndex = 26;
+            this.label23.Text = "Carga de clientes";
+            // 
+            // cliente1
+            // 
+            this.cliente1.Location = new System.Drawing.Point(1128, 54);
+            this.cliente1.Name = "cliente1";
+            this.cliente1.Size = new System.Drawing.Size(281, 22);
+            this.cliente1.TabIndex = 25;
+            // 
+            // clienteReset
+            // 
+            this.clienteReset.Location = new System.Drawing.Point(1228, 346);
+            this.clienteReset.Name = "clienteReset";
+            this.clienteReset.Size = new System.Drawing.Size(181, 23);
+            this.clienteReset.TabIndex = 45;
+            this.clienteReset.Text = "Reset";
+            this.clienteReset.UseVisualStyleBackColor = true;
+            // 
+            // clienteGuardar
+            // 
+            this.clienteGuardar.Location = new System.Drawing.Point(1039, 346);
+            this.clienteGuardar.Name = "clienteGuardar";
+            this.clienteGuardar.Size = new System.Drawing.Size(181, 23);
+            this.clienteGuardar.TabIndex = 44;
+            this.clienteGuardar.Text = "Guardar";
+            this.clienteGuardar.UseVisualStyleBackColor = true;
+            this.clienteGuardar.Click += new System.EventHandler(this.clienteGuardar_Click);
+            // 
+            // cliente4
+            // 
+            this.cliente4.Location = new System.Drawing.Point(1128, 180);
+            this.cliente4.Name = "cliente4";
+            this.cliente4.Size = new System.Drawing.Size(281, 22);
+            this.cliente4.TabIndex = 46;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -687,9 +997,12 @@
             this.libros.ResumeLayout(false);
             this.libros.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.librosDataGrid)).EndInit();
+            this.clientes.ResumeLayout(false);
+            this.clientes.PerformLayout();
             this.autores.ResumeLayout(false);
             this.autores.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.autoresDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesDataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -755,6 +1068,35 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
         private System.Windows.Forms.DataGridViewButtonColumn Editar2;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar2;
+        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.TextBox buscadorCliente;
+        public System.Windows.Forms.DataGridView clientesDataGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn domicilio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechadeNacimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dni;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn2;
+        public System.Windows.Forms.Button clienteReset;
+        public System.Windows.Forms.Button clienteGuardar;
+        public System.Windows.Forms.Label label13;
+        public System.Windows.Forms.TextBox cliente0;
+        public System.Windows.Forms.TextBox cliente6;
+        public System.Windows.Forms.TextBox cliente3;
+        public System.Windows.Forms.DateTimePicker cliente5;
+        public System.Windows.Forms.TextBox cliente2;
+        public System.Windows.Forms.Label label16;
+        public System.Windows.Forms.Label label17;
+        public System.Windows.Forms.Label label18;
+        public System.Windows.Forms.Label label20;
+        public System.Windows.Forms.Label label21;
+        public System.Windows.Forms.Label label22;
+        public System.Windows.Forms.Label label23;
+        public System.Windows.Forms.TextBox cliente1;
+        private System.Windows.Forms.TextBox cliente4;
     }
 }
 

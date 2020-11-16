@@ -95,8 +95,10 @@
   <ItemGroup>
     <Compile Include="connections\Connection.cs" />
     <Compile Include="controllers\AutorController.cs" />
+    <Compile Include="controllers\ClienteController.cs" />
     <Compile Include="controllers\LibroController.cs" />
     <Compile Include="daos\AutorDAO.cs" />
+    <Compile Include="daos\ClienteDAO.cs" />
     <Compile Include="daos\LibroDAO.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

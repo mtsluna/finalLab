@@ -10,6 +10,6 @@ namespace final.models
     {
         public String domicilio;
         public String telefono;
-        public DateTime fechaNacimiento;
+        public String fechaNacimiento;
     }
 }

@@ -19,6 +19,7 @@ namespace final
 
         LibroController libroController = new LibroController();
         AutorController autorController = new AutorController();
+        ClienteController clienteController = new ClienteController();
 
         public Form1()
         {
@@ -26,6 +27,7 @@ namespace final
 
             refreshLibros();
             refreshAutores();
+            refreshCliente();
 
             //autores en libros
             autoresEnLibros.DataSource = autorController.FillAll(true);
@@ -76,6 +78,8 @@ namespace final
             }
         }
 
+
+
         public void setDataToEditLibro(int index)
         {
             DataGridViewRow row = librosDataGrid.Rows[index];
@@ -104,6 +108,12 @@ namespace final
             libroController.deleteBook(Int32.Parse(row.Cells[0].Value.ToString()));
         }
 
+        public void deleteCliente(int index)
+        {
+            DataGridViewRow row = clientesDataGrid.Rows[index];
+            clienteController.deleteCliente(Int32.Parse(row.Cells[0].Value.ToString()));
+        }
+
         public void deleteAutor(int index)
         {
             DataGridViewRow row = autoresDataGrid.Rows[index];
@@ -124,6 +134,14 @@ namespace final
             autoresDataGrid.AutoGenerateColumns = false;
             autoresDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             autoresDataGrid.DataSource = autorController.FillAll(false);
+        }
+
+        public void refreshCliente()
+        {
+            //tabla de libros
+            clientesDataGrid.AutoGenerateColumns = false;
+            clientesDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            clientesDataGrid.DataSource = clienteController.FillAll(false);
         }
 
         public void label1_Click_1(object sender, EventArgs e)
@@ -233,6 +251,65 @@ namespace final
                 autorController.updateAutor(autor);
             }
             refreshAutores();
+        }
+
+        public void setDataToEditClient(int index)
+        {
+            DataGridViewRow row = clientesDataGrid.Rows[index];
+            cliente0.Text = row.Cells[0].Value.ToString();
+            cliente1.Text = row.Cells[1].Value.ToString();
+            cliente2.Text = row.Cells[2].Value.ToString();
+            cliente3.Text = row.Cells[3].Value.ToString();
+            cliente4.Text = row.Cells[4].Value.ToString();
+            cliente5.Text = row.Cells[5].Value.ToString();
+            cliente6.Text = row.Cells[6].Value.ToString();
+        }
+
+        private void clientesDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {            
+            if (e.RowIndex >= 0)
+            {
+                Console.WriteLine(e.ColumnIndex);
+                Console.WriteLine(e.RowIndex);
+                switch (e.ColumnIndex)
+                {
+                    case 7:
+                        setDataToEditClient(e.RowIndex);
+                        break;
+                    case 8:
+                        deleteCliente(e.RowIndex);
+                        refreshCliente();
+                        break;
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            clientesDataGrid.AutoGenerateColumns = false;
+            clientesDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            clientesDataGrid.DataSource = clienteController.FillAllClienteByText(buscadorCliente.Text);
+        }
+
+        private void clienteGuardar_Click(object sender, EventArgs e)
+        {
+            Cliente cliente = new Cliente();
+            cliente.nombre = cliente1.Text;
+            cliente.apellido = cliente2.Text;
+            cliente.domicilio = cliente3.Text;
+            cliente.telefono = cliente4.Text;
+            cliente.fechaNacimiento = cliente5.Value.ToString("yyyy-MM-dd");
+            cliente.dni = cliente6.Text;
+            if (cliente0.Text.Equals(""))
+            {
+                clienteController.insert(cliente);
+            }
+            else
+            {
+                cliente.id = Int16.Parse(cliente0.Text);
+                clienteController.update(cliente);
+            }            
+            refreshCliente();
         }
     }
 }
