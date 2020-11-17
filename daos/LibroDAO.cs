@@ -13,6 +13,16 @@ namespace final.daos
 
     class LibroDAO
     {
+        public DataTable GetAllWC()
+        {
+            MySqlCommand mySqlCommand = new MySqlCommand("SELECT id, CONCAT(titulo, ' - ', edicion) as titulo FROM libros", Connection.GetInstance());
+            MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter();
+            mySqlDataAdapter.SelectCommand = mySqlCommand;
+            DataTable dataTable = new DataTable();
+            mySqlDataAdapter.Fill(dataTable);
+            return dataTable;
+        }
+
         public DataTable GetAll()
         {
             MySqlCommand mySqlCommand = new MySqlCommand("SELECT * FROM libros", Connection.GetInstance());

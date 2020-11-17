@@ -15,9 +15,16 @@ namespace final.controllers
 
         LibroDAO libroDAO = new LibroDAO();
 
-        public DataTable FillAllBooks()
+        public DataTable FillAllBooks(bool concat)
         {
-            return libroDAO.GetAll();
+            if (concat)
+            {
+                return libroDAO.GetAllWC();
+            }
+            else
+            {
+                return libroDAO.GetAll();
+            }
         }
 
         public DataTable FillAllBooksByText(String text)

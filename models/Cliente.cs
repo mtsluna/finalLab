@@ -11,5 +11,8 @@ namespace final.models
         public String domicilio;
         public String telefono;
         public String fechaNacimiento;
+        public int id;
+        public String nombre;
+        public String apellido;
     }
 }

@@ -20,6 +20,7 @@ namespace final
         LibroController libroController = new LibroController();
         AutorController autorController = new AutorController();
         ClienteController clienteController = new ClienteController();
+        PrestamoController prestamoController = new PrestamoController();
 
         public Form1()
         {
@@ -28,16 +29,39 @@ namespace final
             refreshLibros();
             refreshAutores();
             refreshCliente();
+            refreshPrestamo();
 
             //autores en libros
             autoresEnLibros.DataSource = autorController.FillAll(true);
             autoresEnLibros.DisplayMember = "nombre";
             autoresEnLibros.ValueMember = "id";
+
+            //Rellenar combo de clientes
+            rellenarComboClientes();
+
+            //Rellenar combo de libros
+            rellenarComboLibros();
+
+            resetPrestamo();
         }
 
         public void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public void rellenarComboLibros()
+        {
+            cmbLibro.DataSource = libroController.FillAllBooks(true);
+            cmbLibro.DisplayMember = "titulo";
+            cmbLibro.ValueMember = "id";
+        }
+
+        public void rellenarComboClientes()
+        {
+            cmbCliente.DataSource = clienteController.FillAll(true);
+            cmbCliente.DisplayMember = "nombre";
+            cmbCliente.ValueMember = "id";
         }
 
         public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -102,6 +126,20 @@ namespace final
             autor2.Text = row.Cells[2].Value.ToString();
         }
 
+        public void setDataToEditPrestamo(int index)
+        {
+            cmbDevuelto.Enabled = true;
+
+            DataGridViewRow row = prestamosDataGrid.Rows[index];
+            txtIdPrestamo.Text = row.Cells[0].Value.ToString();
+            cmbCliente.SelectedValue = row.Cells[1].Value.ToString();
+            cmbLibro.SelectedValue = row.Cells[2].Value.ToString();
+            dtpFPrestamo.Text = row.Cells[5].Value.ToString();
+            dtpFDevolucion.Text = row.Cells[6].Value.ToString();
+            cmbDevuelto.SelectedItem = row.Cells[7].Value.ToString();
+            //cmbAdministrador.SelectedValue = row.Cells[8].Value.ToString();
+        }
+
         public void deleteLibro(int index)
         {
             DataGridViewRow row = librosDataGrid.Rows[index];
@@ -120,12 +158,21 @@ namespace final
             autorController.deleteAutor(Int32.Parse(row.Cells[0].Value.ToString()));
         }
 
+        public void deletePrestamo(int index)
+        {
+            if (MessageBox.Show("Está por eliminar el préstamo seleccionado. ¿Desea continuar?", "Eliminar préstamo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                DataGridViewRow row = prestamosDataGrid.Rows[index];
+                prestamoController.deleteLoan(Int32.Parse(row.Cells[0].Value.ToString()));
+            }
+        }
+
         public void refreshLibros()
         {
             //tabla de libros
             librosDataGrid.AutoGenerateColumns = false;
             librosDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            librosDataGrid.DataSource = libroController.FillAllBooks();
+            librosDataGrid.DataSource = libroController.FillAllBooks(false);
         }
 
         public void refreshAutores()
@@ -142,6 +189,13 @@ namespace final
             clientesDataGrid.AutoGenerateColumns = false;
             clientesDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             clientesDataGrid.DataSource = clienteController.FillAll(false);
+        }
+
+        public void refreshPrestamo()
+        {
+            prestamosDataGrid.AutoGenerateColumns = false;
+            prestamosDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            prestamosDataGrid.DataSource = prestamoController.FillAllLoans();
         }
 
         public void label1_Click_1(object sender, EventArgs e)
@@ -190,6 +244,7 @@ namespace final
                 libroController.updateBook(libro);
             }
             refreshLibros();
+            rellenarComboLibros();
         }
 
         private void resetLibro_Click(object sender, EventArgs e)
@@ -310,6 +365,76 @@ namespace final
                 clienteController.update(cliente);
             }            
             refreshCliente();
+            rellenarComboClientes();
+        }
+
+        public void resetPrestamo()
+        {
+            txtIdPrestamo.Text = string.Empty;
+            cmbCliente.SelectedIndex = -1;
+            cmbLibro.SelectedIndex = -1;
+            cmbDevuelto.SelectedIndex = 0;
+            cmbDevuelto.Enabled = false;
+            dtpFPrestamo.Value = DateTime.Now;
+            dtpFDevolucion.Value = DateTime.Now;
+        }
+
+        private void prestamosDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                switch (e.ColumnIndex)
+                {
+                    case 9:
+                        setDataToEditPrestamo(e.RowIndex);
+                        break;
+                    case 10:
+                        deletePrestamo(e.RowIndex);
+                        refreshPrestamo();
+                        break;
+                }
+            }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (cmbCliente.SelectedIndex != -1 && cmbLibro.SelectedIndex != -1)
+            {
+                Cliente cliente = new Cliente();
+                cliente.id = Convert.ToInt32(cmbCliente.SelectedValue);
+
+                Libro libro = new Libro(null);
+                libro.id = Convert.ToInt32(cmbLibro.SelectedValue);
+
+                Prestamo prestamo = new Prestamo(cliente, libro);
+                prestamo.fechaPrestamo = dtpFPrestamo.Value.ToString("yyyy-MM-dd");
+                prestamo.fechaDevolucion = dtpFDevolucion.Value.ToString("yyyy-MM-dd");
+                prestamo.devuelto = ((cmbDevuelto.SelectedItem.ToString()) == "No") ? 'N' : 'S';
+
+                if (txtIdPrestamo.Text.Equals(""))
+                {
+                    prestamoController.instertLoan(prestamo);
+                }
+                else
+                {
+                    prestamo.id = Convert.ToInt32(txtIdPrestamo.Text);
+                    prestamoController.updateLoan(prestamo);
+                }
+
+                resetPrestamo();
+                refreshPrestamo();
+            }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            resetPrestamo();
+        }
+
+        private void logout_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Está por salir del sistema. ¿Desea continuar?", "Cerando el sistema...", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                Close();
         }
     }
 }

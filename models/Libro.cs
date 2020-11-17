@@ -16,6 +16,7 @@ namespace final.models
         public int paginas { get; set; }
         public String isbn { get; set; }
         public Autor autor { get; set; }
+        public int id { get; set; }
 
         public Libro(Autor autor)
         {

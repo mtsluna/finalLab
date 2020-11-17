@@ -33,3 +33,38 @@ C:\Users\MtsSk\Desktop\Lic. en Informatica y Desarrollo de Software\Laboratorio 
 C:\Users\MtsSk\Desktop\Lic. en Informatica y Desarrollo de Software\Laboratorio II\workspaceC#\final\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\MtsSk\Desktop\Lic. en Informatica y Desarrollo de Software\Laboratorio II\workspaceC#\final\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\MtsSk\Desktop\Lic. en Informatica y Desarrollo de Software\Laboratorio II\workspaceC#\final\obj\Debug\final.csproj.CopyComplete
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\bin\Debug\final.exe.config
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\bin\Debug\final.exe
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\bin\Debug\final.pdb
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\bin\Debug\BouncyCastle.Crypto.dll
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\bin\Debug\Google.Protobuf.dll
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\bin\Debug\K4os.Compression.LZ4.dll
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\bin\Debug\K4os.Hash.xxHash.dll
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\bin\Debug\MySql.Data.dll
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\bin\Debug\Renci.SshNet.dll
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\bin\Debug\System.Buffers.dll
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\bin\Debug\System.Memory.dll
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\bin\Debug\System.Numerics.Vectors.dll
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\bin\Debug\Ubiety.Dns.Core.dll
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\bin\Debug\Zstandard.Net.dll
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\bin\Debug\Google.Protobuf.pdb
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\bin\Debug\Google.Protobuf.xml
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\bin\Debug\K4os.Compression.LZ4.xml
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\bin\Debug\K4os.Hash.xxHash.xml
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\bin\Debug\MySql.Data.xml
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\bin\Debug\Renci.SshNet.xml
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\bin\Debug\System.Buffers.xml
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\bin\Debug\System.Memory.xml
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\bin\Debug\System.Numerics.Vectors.xml
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\obj\Debug\final.csprojAssemblyReference.cache
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\obj\Debug\final.Form1.resources
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\obj\Debug\final.Properties.Resources.resources
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\obj\Debug\final.csproj.GenerateResource.cache
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\obj\Debug\final.csproj.CoreCompileInputs.cache
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\obj\Debug\final.csproj.CopyComplete
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\obj\Debug\final.exe
+C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\obj\Debug\final.pdb

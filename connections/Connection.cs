@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 using MySql.Data.MySqlClient;
 
 namespace final.connections
@@ -20,7 +21,9 @@ namespace final.connections
         {
             if(instance == null)
             {
-                instance = new MySqlConnection("Server=localhost; Database=finallab2; Uid=root; Pwd=");
+                //instance = new MySqlConnection("Server=localhost; Database=finallab2; Uid=root; Pwd=");
+                var connection = ConfigurationManager.ConnectionStrings["connect"].ConnectionString;
+                instance = new MySqlConnection(connection);
                 instance.Open();
             }
             return instance;
