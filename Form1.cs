@@ -436,5 +436,24 @@ namespace final
             if (MessageBox.Show("Está por salir del sistema. ¿Desea continuar?", "Cerando el sistema...", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 Close();
         }
+
+        private void prestamosDataGrid_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            foreach (DataGridViewRow row in prestamosDataGrid.Rows)
+            {
+                if (row.Cells[7].Value.ToString() == "No" && Convert.ToDateTime(row.Cells[6].Value) >= DateTime.Now)
+                {
+                    row.DefaultCellStyle.BackColor = Color.Yellow;
+                }
+                else if (row.Cells[7].Value.ToString() == "No" && Convert.ToDateTime(row.Cells[6].Value) < DateTime.Now)
+                {
+                    row.DefaultCellStyle.BackColor = Color.Red;
+                }
+                else
+                {
+                    row.DefaultCellStyle.BackColor = Color.White;
+                }
+            }
+        }
     }
 }

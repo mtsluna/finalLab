@@ -48,6 +48,17 @@
             this.txtIdPrestamo = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.prestamosDataGrid = new System.Windows.Forms.DataGridView();
+            this.idPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_LIBRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.libro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDevolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.devuelto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.administrador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.libros = new System.Windows.Forms.TabPage();
             this.resetLibro = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -134,17 +145,6 @@
             this.Nombre = new System.Windows.Forms.Label();
             this.autor1 = new System.Windows.Forms.TextBox();
             this.logout = new System.Windows.Forms.Button();
-            this.idPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_LIBRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.libro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDevolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.devuelto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.administrador = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl.SuspendLayout();
             this.prestamos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDataGrid)).BeginInit();
@@ -390,6 +390,76 @@
             this.prestamosDataGrid.Size = new System.Drawing.Size(769, 309);
             this.prestamosDataGrid.TabIndex = 0;
             this.prestamosDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.prestamosDataGrid_CellContentClick);
+            this.prestamosDataGrid.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.prestamosDataGrid_RowPostPaint);
+            // 
+            // idPrestamo
+            // 
+            this.idPrestamo.DataPropertyName = "id";
+            this.idPrestamo.HeaderText = "ID";
+            this.idPrestamo.Name = "idPrestamo";
+            // 
+            // ID_CLIENTE
+            // 
+            this.ID_CLIENTE.DataPropertyName = "id_cliente";
+            this.ID_CLIENTE.HeaderText = "ID Cliente";
+            this.ID_CLIENTE.Name = "ID_CLIENTE";
+            this.ID_CLIENTE.Visible = false;
+            // 
+            // ID_LIBRO
+            // 
+            this.ID_LIBRO.DataPropertyName = "id_libro";
+            this.ID_LIBRO.HeaderText = "ID Libro";
+            this.ID_LIBRO.Name = "ID_LIBRO";
+            this.ID_LIBRO.Visible = false;
+            // 
+            // cliente
+            // 
+            this.cliente.DataPropertyName = "cliente";
+            this.cliente.HeaderText = "Cliente";
+            this.cliente.Name = "cliente";
+            // 
+            // libro
+            // 
+            this.libro.DataPropertyName = "libro";
+            this.libro.HeaderText = "Libro";
+            this.libro.Name = "libro";
+            // 
+            // fechaPrestamo
+            // 
+            this.fechaPrestamo.DataPropertyName = "fechaPrestamo";
+            this.fechaPrestamo.HeaderText = "Fecha Préstamo";
+            this.fechaPrestamo.Name = "fechaPrestamo";
+            // 
+            // fechaDevolucion
+            // 
+            this.fechaDevolucion.DataPropertyName = "fechaDevolucion";
+            this.fechaDevolucion.HeaderText = "Fecha Devolución";
+            this.fechaDevolucion.Name = "fechaDevolucion";
+            // 
+            // devuelto
+            // 
+            this.devuelto.DataPropertyName = "devuelto";
+            this.devuelto.HeaderText = "Devuelto";
+            this.devuelto.Name = "devuelto";
+            // 
+            // administrador
+            // 
+            this.administrador.HeaderText = "Administrador";
+            this.administrador.Name = "administrador";
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.HeaderText = "Editar";
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseColumnTextForButtonValue = true;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.HeaderText = "Eliminar";
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseColumnTextForButtonValue = true;
             // 
             // libros
             // 
@@ -1288,75 +1358,6 @@
             this.logout.Text = "SALIR";
             this.logout.UseVisualStyleBackColor = true;
             this.logout.Click += new System.EventHandler(this.logout_Click);
-            // 
-            // idPrestamo
-            // 
-            this.idPrestamo.DataPropertyName = "id";
-            this.idPrestamo.HeaderText = "ID";
-            this.idPrestamo.Name = "idPrestamo";
-            // 
-            // ID_CLIENTE
-            // 
-            this.ID_CLIENTE.DataPropertyName = "id_cliente";
-            this.ID_CLIENTE.HeaderText = "ID Cliente";
-            this.ID_CLIENTE.Name = "ID_CLIENTE";
-            this.ID_CLIENTE.Visible = false;
-            // 
-            // ID_LIBRO
-            // 
-            this.ID_LIBRO.DataPropertyName = "id_libro";
-            this.ID_LIBRO.HeaderText = "ID Libro";
-            this.ID_LIBRO.Name = "ID_LIBRO";
-            this.ID_LIBRO.Visible = false;
-            // 
-            // cliente
-            // 
-            this.cliente.DataPropertyName = "cliente";
-            this.cliente.HeaderText = "Cliente";
-            this.cliente.Name = "cliente";
-            // 
-            // libro
-            // 
-            this.libro.DataPropertyName = "libro";
-            this.libro.HeaderText = "Libro";
-            this.libro.Name = "libro";
-            // 
-            // fechaPrestamo
-            // 
-            this.fechaPrestamo.DataPropertyName = "fechaPrestamo";
-            this.fechaPrestamo.HeaderText = "Fecha Préstamo";
-            this.fechaPrestamo.Name = "fechaPrestamo";
-            // 
-            // fechaDevolucion
-            // 
-            this.fechaDevolucion.DataPropertyName = "fechaDevolucion";
-            this.fechaDevolucion.HeaderText = "Fecha Devolución";
-            this.fechaDevolucion.Name = "fechaDevolucion";
-            // 
-            // devuelto
-            // 
-            this.devuelto.DataPropertyName = "devuelto";
-            this.devuelto.HeaderText = "Devuelto";
-            this.devuelto.Name = "devuelto";
-            // 
-            // administrador
-            // 
-            this.administrador.HeaderText = "Administrador";
-            this.administrador.Name = "administrador";
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.HeaderText = "Editar";
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseColumnTextForButtonValue = true;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.HeaderText = "Eliminar";
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseColumnTextForButtonValue = true;
             // 
             // Form1
             // 
