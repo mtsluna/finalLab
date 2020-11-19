@@ -180,11 +180,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.librosDataGrid)).BeginInit();
             this.clientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientesDataGrid)).BeginInit();
-<<<<<<< Updated upstream
-=======
             this.administradores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminsDataGrid)).BeginInit();
->>>>>>> Stashed changes
+
             this.autores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.autoresDataGrid)).BeginInit();
             this.SuspendLayout();
@@ -205,7 +203,7 @@
             // 
             // prestamos
             // 
-<<<<<<< Updated upstream
+
             this.prestamos.Controls.Add(this.btnReset);
             this.prestamos.Controls.Add(this.btnGuardar);
             this.prestamos.Controls.Add(this.cmbAdministrador);
@@ -224,8 +222,7 @@
             this.prestamos.Controls.Add(this.txtIdPrestamo);
             this.prestamos.Controls.Add(this.label15);
             this.prestamos.Controls.Add(this.prestamosDataGrid);
-=======
->>>>>>> Stashed changes
+
             this.prestamos.Location = new System.Drawing.Point(4, 22);
             this.prestamos.Margin = new System.Windows.Forms.Padding(2);
             this.prestamos.Name = "prestamos";
