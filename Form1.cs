@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
+using TextBox = System.Windows.Controls.TextBox;
 
 namespace final
 {
@@ -20,7 +21,11 @@ namespace final
         LibroController libroController = new LibroController();
         AutorController autorController = new AutorController();
         ClienteController clienteController = new ClienteController();
+<<<<<<< Updated upstream
         PrestamoController prestamoController = new PrestamoController();
+=======
+        AdministradorController adminController = new AdministradorController();
+>>>>>>> Stashed changes
 
         public Form1()
         {
@@ -29,7 +34,12 @@ namespace final
             refreshLibros();
             refreshAutores();
             refreshCliente();
+<<<<<<< Updated upstream
             refreshPrestamo();
+=======
+            refreshAdmins();
+            
+>>>>>>> Stashed changes
 
             //autores en libros
             autoresEnLibros.DataSource = autorController.FillAll(true);
@@ -191,11 +201,21 @@ namespace final
             clientesDataGrid.DataSource = clienteController.FillAll(false);
         }
 
+<<<<<<< Updated upstream
         public void refreshPrestamo()
         {
             prestamosDataGrid.AutoGenerateColumns = false;
             prestamosDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             prestamosDataGrid.DataSource = prestamoController.FillAllLoans();
+=======
+        
+        public void refreshAdmins()
+        {
+            //Tabla de administradores
+            adminsDataGrid.AutoGenerateColumns = false;
+            adminsDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            adminsDataGrid.DataSource = adminController.FillAll(false);
+>>>>>>> Stashed changes
         }
 
         public void label1_Click_1(object sender, EventArgs e)
@@ -453,6 +473,116 @@ namespace final
                 {
                     row.DefaultCellStyle.BackColor = Color.White;
                 }
+            }
+        }
+
+        //Metodo que maneja los clicks dentro del Data Grid
+        private void adminsDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                Console.WriteLine(e.ColumnIndex);
+                Console.WriteLine(e.RowIndex);
+                switch (e.ColumnIndex)
+                {
+                    case 7:
+                        setDataToEditAdmin(e.RowIndex);
+                        break;
+                    case 8:
+                        deleteAdmin(e.RowIndex);
+                        refreshAdmins();
+                        break;
+                }
+            }
+        }
+
+        private void adminsDataGrid_Format(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if(e.ColumnIndex == 6 && e.Value != null)
+            {
+                e.Value = new String('*', e.Value.ToString().Length);
+            }            
+        }
+
+        public void setDataToEditAdmin(int index)
+        {
+            DataGridViewRow row = adminsDataGrid.Rows[index];
+            adminID.Text = row.Cells[0].Value.ToString();
+            adminNombre.Text = row.Cells[1].Value.ToString();
+            adminApellido.Text = row.Cells[2].Value.ToString();
+            adminTelefono.Text = row.Cells[3].Value.ToString();
+            adminDNI.Text = row.Cells[4].Value.ToString();
+            adminUser.Text = row.Cells[5].Value.ToString();
+            adminContra.Text = row.Cells[6].Value.ToString();
+        }
+
+        public void deleteAdmin(int index)
+        {
+            DataGridViewRow row = adminsDataGrid.Rows[index];
+            adminController.deleteAdmin(Int32.Parse(row.Cells[0].Value.ToString()));
+        }
+
+        private void limpiarAdmin_Click(object sender, EventArgs e)
+        {
+            adminID.Text = "";
+            adminNombre.Text = "";
+            adminApellido.Text = "";
+            adminTelefono.Text = "";
+            adminDNI.Text = "";
+            adminUser.Text = "";
+            adminContra.Text = "";
+        }
+
+        private void guardarAdmin_Click(object sender, EventArgs e)
+        {
+            Administrador admin = new Administrador();
+            admin.nombre = adminNombre.Text;
+            admin.apellido = adminApellido.Text;            
+            admin.telefono = adminTelefono.Text;
+            admin.dni = adminDNI.Text;
+            admin.usuario = adminUser.Text;            
+            admin.contraseña = adminContra.Text;
+            if (adminID.Text.Equals(""))
+            {
+                adminController.insertAdmin(admin);
+            }
+            else
+            {
+                admin.id = Int16.Parse(adminID.Text);
+                adminController.updateAdmin(admin);
+            }
+            refreshAdmins();
+            adminID.Text = "";
+            adminNombre.Text = "";
+            adminApellido.Text = "";
+            adminTelefono.Text = "";
+            adminDNI.Text = "";
+            adminUser.Text = "";
+            adminContra.Text = "";
+        }
+
+        private void label25_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label28_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void adminTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
             }
         }
     }

@@ -1,5 +1,17 @@
 
+<<<<<<< Updated upstream
 CREATE DATABASE `finallab2`;
+=======
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`finallab2` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+>>>>>>> Stashed changes
 
 USE `finallab2`;
 
@@ -16,7 +28,11 @@ CREATE TABLE `administrador` (
   `usuario` varchar(20) NOT NULL,
   `contraseña` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
+<<<<<<< Updated upstream
 ) ENGINE=InnoDB;
+=======
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+>>>>>>> Stashed changes
 
 /*Data for the table `administrador` */
 
@@ -29,7 +45,11 @@ CREATE TABLE `autor` (
   `nombre` varchar(20) DEFAULT NULL,
   `apellido` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
+<<<<<<< Updated upstream
 ) ENGINE=InnoDB;
+=======
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+>>>>>>> Stashed changes
 
 /*Data for the table `autor` */
 
@@ -43,14 +63,22 @@ DROP TABLE IF EXISTS `clientes`;
 
 CREATE TABLE `clientes` (
   `id` int NOT NULL AUTO_INCREMENT,
+<<<<<<< Updated upstream
   `nombre` varchar(20)  DEFAULT NULL,
+=======
+  `nombre` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+>>>>>>> Stashed changes
   `apellido` varchar(20) DEFAULT NULL,
   `domicilio` varchar(50) DEFAULT NULL,
   `telefono` varchar(15) DEFAULT NULL,
   `fechaNacimiento` date DEFAULT NULL,
   `dni` varchar(15) DEFAULT NULL,
   PRIMARY KEY (`id`)
+<<<<<<< Updated upstream
 ) ENGINE=InnoDB;
+=======
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+>>>>>>> Stashed changes
 
 /*Data for the table `clientes` */
 
@@ -76,7 +104,11 @@ CREATE TABLE `libros` (
   PRIMARY KEY (`id`),
   KEY `fk_autor` (`fk_autor`),
   CONSTRAINT `fk_autor` FOREIGN KEY (`fk_autor`) REFERENCES `autor` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+<<<<<<< Updated upstream
 ) ENGINE=InnoDB;
+=======
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+>>>>>>> Stashed changes
 
 /*Data for the table `libros` */
 
@@ -103,7 +135,11 @@ CREATE TABLE `prestamos` (
   CONSTRAINT `fk_administrador` FOREIGN KEY (`fk_administrador`) REFERENCES `administrador` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_cliente` FOREIGN KEY (`fk_cliente`) REFERENCES `clientes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_libro` FOREIGN KEY (`fk_libro`) REFERENCES `libros` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+<<<<<<< Updated upstream
 ) ENGINE=InnoDB;
+=======
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+>>>>>>> Stashed changes
 
 /*Data for the table `prestamos` */
 

@@ -28,6 +28,7 @@
         /// </summary>
         public void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.prestamos = new System.Windows.Forms.TabPage();
             this.btnReset = new System.Windows.Forms.Button();
@@ -126,6 +127,33 @@
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.administradores = new System.Windows.Forms.TabPage();
+            this.limpiarAdmin = new System.Windows.Forms.Button();
+            this.guardarAdmin = new System.Windows.Forms.Button();
+            this.adminContra = new System.Windows.Forms.TextBox();
+            this.adminUser = new System.Windows.Forms.TextBox();
+            this.adminTelefono = new System.Windows.Forms.TextBox();
+            this.adminDNI = new System.Windows.Forms.TextBox();
+            this.adminApellido = new System.Windows.Forms.TextBox();
+            this.adminNombre = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.adminID = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.adminsDataGrid = new System.Windows.Forms.DataGridView();
+            this.IdAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ApellidoAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TelefonoAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DniAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UsuarioAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PasswordAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminEditar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.AdminEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.autores = new System.Windows.Forms.TabPage();
             this.resetAutor = new System.Windows.Forms.Button();
             this.guardarAutor = new System.Windows.Forms.Button();
@@ -152,6 +180,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.librosDataGrid)).BeginInit();
             this.clientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientesDataGrid)).BeginInit();
+<<<<<<< Updated upstream
+=======
+            this.administradores.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.adminsDataGrid)).BeginInit();
+>>>>>>> Stashed changes
             this.autores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.autoresDataGrid)).BeginInit();
             this.SuspendLayout();
@@ -172,6 +205,7 @@
             // 
             // prestamos
             // 
+<<<<<<< Updated upstream
             this.prestamos.Controls.Add(this.btnReset);
             this.prestamos.Controls.Add(this.btnGuardar);
             this.prestamos.Controls.Add(this.cmbAdministrador);
@@ -190,6 +224,8 @@
             this.prestamos.Controls.Add(this.txtIdPrestamo);
             this.prestamos.Controls.Add(this.label15);
             this.prestamos.Controls.Add(this.prestamosDataGrid);
+=======
+>>>>>>> Stashed changes
             this.prestamos.Location = new System.Drawing.Point(4, 22);
             this.prestamos.Margin = new System.Windows.Forms.Padding(2);
             this.prestamos.Name = "prestamos";
@@ -866,6 +902,7 @@
             this.clientes.UseVisualStyleBackColor = true;
             // 
             // cliente4
+<<<<<<< Updated upstream
             // 
             this.cliente4.Location = new System.Drawing.Point(846, 146);
             this.cliente4.Margin = new System.Windows.Forms.Padding(2);
@@ -1018,6 +1055,160 @@
             // 
             // cliente1
             // 
+=======
+            // 
+            this.cliente4.Location = new System.Drawing.Point(846, 146);
+            this.cliente4.Margin = new System.Windows.Forms.Padding(2);
+            this.cliente4.Name = "cliente4";
+            this.cliente4.Size = new System.Drawing.Size(212, 20);
+            this.cliente4.TabIndex = 46;
+            // 
+            // clienteReset
+            // 
+            this.clienteReset.Location = new System.Drawing.Point(921, 281);
+            this.clienteReset.Margin = new System.Windows.Forms.Padding(2);
+            this.clienteReset.Name = "clienteReset";
+            this.clienteReset.Size = new System.Drawing.Size(136, 19);
+            this.clienteReset.TabIndex = 45;
+            this.clienteReset.Text = "Reset";
+            this.clienteReset.UseVisualStyleBackColor = true;
+            // 
+            // clienteGuardar
+            // 
+            this.clienteGuardar.Location = new System.Drawing.Point(779, 281);
+            this.clienteGuardar.Margin = new System.Windows.Forms.Padding(2);
+            this.clienteGuardar.Name = "clienteGuardar";
+            this.clienteGuardar.Size = new System.Drawing.Size(136, 19);
+            this.clienteGuardar.TabIndex = 44;
+            this.clienteGuardar.Text = "Guardar";
+            this.clienteGuardar.UseVisualStyleBackColor = true;
+            this.clienteGuardar.Click += new System.EventHandler(this.clienteGuardar_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(972, 12);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(21, 13);
+            this.label13.TabIndex = 43;
+            this.label13.Text = "ID:";
+            // 
+            // cliente0
+            // 
+            this.cliente0.Enabled = false;
+            this.cliente0.Location = new System.Drawing.Point(995, 10);
+            this.cliente0.Margin = new System.Windows.Forms.Padding(2);
+            this.cliente0.Name = "cliente0";
+            this.cliente0.Size = new System.Drawing.Size(62, 20);
+            this.cliente0.TabIndex = 42;
+            // 
+            // cliente6
+            // 
+            this.cliente6.Location = new System.Drawing.Point(846, 210);
+            this.cliente6.Margin = new System.Windows.Forms.Padding(2);
+            this.cliente6.Name = "cliente6";
+            this.cliente6.Size = new System.Drawing.Size(212, 20);
+            this.cliente6.TabIndex = 37;
+            // 
+            // cliente3
+            // 
+            this.cliente3.Location = new System.Drawing.Point(846, 110);
+            this.cliente3.Margin = new System.Windows.Forms.Padding(2);
+            this.cliente3.Name = "cliente3";
+            this.cliente3.Size = new System.Drawing.Size(212, 20);
+            this.cliente3.TabIndex = 36;
+            // 
+            // cliente5
+            // 
+            this.cliente5.Location = new System.Drawing.Point(860, 176);
+            this.cliente5.Margin = new System.Windows.Forms.Padding(2);
+            this.cliente5.Name = "cliente5";
+            this.cliente5.Size = new System.Drawing.Size(198, 20);
+            this.cliente5.TabIndex = 35;
+            // 
+            // cliente2
+            // 
+            this.cliente2.Location = new System.Drawing.Point(846, 77);
+            this.cliente2.Margin = new System.Windows.Forms.Padding(2);
+            this.cliente2.Name = "cliente2";
+            this.cliente2.Size = new System.Drawing.Size(212, 20);
+            this.cliente2.TabIndex = 34;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(777, 180);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(75, 13);
+            this.label16.TabIndex = 33;
+            this.label16.Text = "F. Nacimiento:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(777, 210);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(29, 13);
+            this.label17.TabIndex = 32;
+            this.label17.Text = "DNI:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(777, 111);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(52, 13);
+            this.label18.TabIndex = 31;
+            this.label18.Text = "Domicilio:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(777, 145);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(52, 13);
+            this.label20.TabIndex = 29;
+            this.label20.Text = "Telefono:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(777, 77);
+            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(47, 13);
+            this.label21.TabIndex = 28;
+            this.label21.Text = "Apellido:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(777, 44);
+            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(47, 13);
+            this.label22.TabIndex = 27;
+            this.label22.Text = "Nombre:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(776, 7);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(149, 20);
+            this.label23.TabIndex = 26;
+            this.label23.Text = "Carga de clientes";
+            // 
+            // cliente1
+            // 
+>>>>>>> Stashed changes
             this.cliente1.Location = new System.Drawing.Point(846, 44);
             this.cliente1.Margin = new System.Windows.Forms.Padding(2);
             this.cliente1.Name = "cliente1";
@@ -1146,6 +1337,27 @@
             // 
             // administradores
             // 
+<<<<<<< Updated upstream
+=======
+            this.administradores.Controls.Add(this.limpiarAdmin);
+            this.administradores.Controls.Add(this.guardarAdmin);
+            this.administradores.Controls.Add(this.adminContra);
+            this.administradores.Controls.Add(this.adminUser);
+            this.administradores.Controls.Add(this.adminTelefono);
+            this.administradores.Controls.Add(this.adminDNI);
+            this.administradores.Controls.Add(this.adminApellido);
+            this.administradores.Controls.Add(this.adminNombre);
+            this.administradores.Controls.Add(this.label29);
+            this.administradores.Controls.Add(this.label28);
+            this.administradores.Controls.Add(this.label27);
+            this.administradores.Controls.Add(this.label26);
+            this.administradores.Controls.Add(this.label25);
+            this.administradores.Controls.Add(this.label24);
+            this.administradores.Controls.Add(this.adminID);
+            this.administradores.Controls.Add(this.label19);
+            this.administradores.Controls.Add(this.label15);
+            this.administradores.Controls.Add(this.adminsDataGrid);
+>>>>>>> Stashed changes
             this.administradores.Location = new System.Drawing.Point(4, 22);
             this.administradores.Margin = new System.Windows.Forms.Padding(2);
             this.administradores.Name = "administradores";
@@ -1153,6 +1365,425 @@
             this.administradores.TabIndex = 3;
             this.administradores.Text = "Administradores";
             this.administradores.UseVisualStyleBackColor = true;
+            // 
+<<<<<<< Updated upstream
+            // autores
+            // 
+            this.autores.Controls.Add(this.resetAutor);
+            this.autores.Controls.Add(this.guardarAutor);
+            this.autores.Controls.Add(this.label11);
+            this.autores.Controls.Add(this.buscarAutor);
+            this.autores.Controls.Add(this.autor0);
+            this.autores.Controls.Add(this.buscadorAutor);
+            this.autores.Controls.Add(this.autor2);
+            this.autores.Controls.Add(this.autoresDataGrid);
+            this.autores.Controls.Add(this.label12);
+            this.autores.Controls.Add(this.label14);
+            this.autores.Controls.Add(this.Nombre);
+            this.autores.Controls.Add(this.autor1);
+            this.autores.Location = new System.Drawing.Point(4, 22);
+            this.autores.Margin = new System.Windows.Forms.Padding(2);
+            this.autores.Name = "autores";
+            this.autores.Size = new System.Drawing.Size(1064, 309);
+            this.autores.TabIndex = 4;
+            this.autores.Text = "Autores";
+            this.autores.UseVisualStyleBackColor = true;
+            // 
+            // resetAutor
+            // 
+            this.resetAutor.Location = new System.Drawing.Point(921, 281);
+            this.resetAutor.Margin = new System.Windows.Forms.Padding(2);
+            this.resetAutor.Name = "resetAutor";
+            this.resetAutor.Size = new System.Drawing.Size(136, 19);
+            this.resetAutor.TabIndex = 33;
+            this.resetAutor.Text = "Reset";
+            this.resetAutor.UseVisualStyleBackColor = true;
+            this.resetAutor.Click += new System.EventHandler(this.resetAutor_Click);
+            // 
+            // guardarAutor
+            // 
+            this.guardarAutor.Location = new System.Drawing.Point(779, 281);
+            this.guardarAutor.Margin = new System.Windows.Forms.Padding(2);
+            this.guardarAutor.Name = "guardarAutor";
+            this.guardarAutor.Size = new System.Drawing.Size(136, 19);
+            this.guardarAutor.TabIndex = 32;
+            this.guardarAutor.Text = "Guardar";
+            this.guardarAutor.UseVisualStyleBackColor = true;
+            this.guardarAutor.Click += new System.EventHandler(this.guardarAutor_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(972, 12);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(21, 13);
+            this.label11.TabIndex = 31;
+            this.label11.Text = "ID:";
+            // 
+            // buscarAutor
+            // 
+            this.buscarAutor.Location = new System.Drawing.Point(2, 281);
+            this.buscarAutor.Margin = new System.Windows.Forms.Padding(2);
+            this.buscarAutor.Name = "buscarAutor";
+            this.buscarAutor.Size = new System.Drawing.Size(178, 19);
+            this.buscarAutor.TabIndex = 22;
+            this.buscarAutor.Text = "Buscar por Nombre y Apellido";
+            this.buscarAutor.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.buscarAutor.UseVisualStyleBackColor = true;
+            this.buscarAutor.Click += new System.EventHandler(this.buscarAutor_Click);
+            // 
+            // autor0
+            // 
+            this.autor0.Enabled = false;
+            this.autor0.Location = new System.Drawing.Point(995, 10);
+            this.autor0.Margin = new System.Windows.Forms.Padding(2);
+            this.autor0.Name = "autor0";
+            this.autor0.Size = new System.Drawing.Size(62, 20);
+            this.autor0.TabIndex = 30;
+            // 
+            // buscadorAutor
+            // 
+            this.buscadorAutor.Location = new System.Drawing.Point(185, 281);
+            this.buscadorAutor.Margin = new System.Windows.Forms.Padding(2);
+            this.buscadorAutor.Name = "buscadorAutor";
+            this.buscadorAutor.Size = new System.Drawing.Size(587, 20);
+            this.buscadorAutor.TabIndex = 21;
+            // 
+            // autor2
+            // 
+            this.autor2.Location = new System.Drawing.Point(846, 77);
+            this.autor2.Margin = new System.Windows.Forms.Padding(2);
+            this.autor2.Name = "autor2";
+            this.autor2.Size = new System.Drawing.Size(212, 20);
+            this.autor2.TabIndex = 29;
+            // 
+            // autoresDataGrid
+            // 
+            this.autoresDataGrid.AllowUserToAddRows = false;
+            this.autoresDataGrid.AllowUserToDeleteRows = false;
+            this.autoresDataGrid.AllowUserToOrderColumns = true;
+            this.autoresDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.autoresDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID2,
+            this.Nombre2,
+            this.Apellido,
+            this.Editar2,
+            this.Eliminar2});
+            this.autoresDataGrid.Location = new System.Drawing.Point(2, 2);
+            this.autoresDataGrid.Margin = new System.Windows.Forms.Padding(2);
+            this.autoresDataGrid.Name = "autoresDataGrid";
+            this.autoresDataGrid.RowHeadersWidth = 51;
+            this.autoresDataGrid.RowTemplate.Height = 24;
+            this.autoresDataGrid.Size = new System.Drawing.Size(769, 271);
+            this.autoresDataGrid.TabIndex = 1;
+            this.autoresDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.autoresDataGrid_CellContentClick);
+            // 
+            // ID2
+            // 
+            this.ID2.DataPropertyName = "id";
+            this.ID2.HeaderText = "ID";
+            this.ID2.MinimumWidth = 6;
+            this.ID2.Name = "ID2";
+            this.ID2.ReadOnly = true;
+            this.ID2.Width = 125;
+            // 
+            // Nombre2
+            // 
+            this.Nombre2.DataPropertyName = "nombre";
+            this.Nombre2.HeaderText = "Nombre";
+            this.Nombre2.MinimumWidth = 6;
+            this.Nombre2.Name = "Nombre2";
+            this.Nombre2.Width = 125;
+            // 
+            // Apellido
+            // 
+            this.Apellido.DataPropertyName = "apellido";
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.MinimumWidth = 6;
+            this.Apellido.Name = "Apellido";
+            this.Apellido.Width = 125;
+            // 
+            // Editar2
+            // 
+            this.Editar2.HeaderText = "Editar";
+            this.Editar2.MinimumWidth = 6;
+            this.Editar2.Name = "Editar2";
+            this.Editar2.Text = "Editar";
+            this.Editar2.UseColumnTextForButtonValue = true;
+            this.Editar2.Width = 125;
+            // 
+            // Eliminar2
+            // 
+            this.Eliminar2.HeaderText = "Eliminar";
+            this.Eliminar2.MinimumWidth = 6;
+            this.Eliminar2.Name = "Eliminar2";
+            this.Eliminar2.Text = "Eliminar";
+            this.Eliminar2.UseColumnTextForButtonValue = true;
+            this.Eliminar2.Width = 125;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(777, 77);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(47, 13);
+            this.label12.TabIndex = 28;
+            this.label12.Text = "Apellido:";
+            // 
+            // label14
+            // 
+=======
+            // limpiarAdmin
+            // 
+            this.limpiarAdmin.Location = new System.Drawing.Point(863, 283);
+            this.limpiarAdmin.Name = "limpiarAdmin";
+            this.limpiarAdmin.Size = new System.Drawing.Size(117, 23);
+            this.limpiarAdmin.TabIndex = 17;
+            this.limpiarAdmin.Text = "Limpiar";
+            this.limpiarAdmin.UseVisualStyleBackColor = true;
+            this.limpiarAdmin.Click += new System.EventHandler(this.limpiarAdmin_Click);
+            // 
+            // guardarAdmin
+            // 
+            this.guardarAdmin.Location = new System.Drawing.Point(694, 283);
+            this.guardarAdmin.Name = "guardarAdmin";
+            this.guardarAdmin.Size = new System.Drawing.Size(117, 23);
+            this.guardarAdmin.TabIndex = 16;
+            this.guardarAdmin.Text = "Guardar";
+            this.guardarAdmin.UseVisualStyleBackColor = true;
+            this.guardarAdmin.Click += new System.EventHandler(this.guardarAdmin_Click);
+            // 
+            // adminContra
+            // 
+            this.adminContra.Location = new System.Drawing.Point(777, 237);
+            this.adminContra.Name = "adminContra";
+            this.adminContra.Size = new System.Drawing.Size(202, 20);
+            this.adminContra.TabIndex = 15;
+            this.adminContra.UseSystemPasswordChar = true;
+            // 
+            // adminUser
+            // 
+            this.adminUser.Location = new System.Drawing.Point(777, 203);
+            this.adminUser.Name = "adminUser";
+            this.adminUser.Size = new System.Drawing.Size(202, 20);
+            this.adminUser.TabIndex = 14;
+            // 
+            // adminTelefono
+            // 
+            this.adminTelefono.Location = new System.Drawing.Point(777, 143);
+            this.adminTelefono.Name = "adminTelefono";
+            this.adminTelefono.Size = new System.Drawing.Size(203, 20);
+            this.adminTelefono.TabIndex = 13;
+            // 
+            // adminDNI
+            // 
+            this.adminDNI.Location = new System.Drawing.Point(777, 114);
+            this.adminDNI.Name = "adminDNI";
+            this.adminDNI.Size = new System.Drawing.Size(203, 20);
+            this.adminDNI.TabIndex = 12;
+            this.adminDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.adminTelefono_KeyPress);
+            // 
+            // adminApellido
+            // 
+            this.adminApellido.Location = new System.Drawing.Point(777, 83);
+            this.adminApellido.Name = "adminApellido";
+            this.adminApellido.Size = new System.Drawing.Size(203, 20);
+            this.adminApellido.TabIndex = 11;
+            // 
+            // adminNombre
+            // 
+            this.adminNombre.Location = new System.Drawing.Point(777, 50);
+            this.adminNombre.Name = "adminNombre";
+            this.adminNombre.Size = new System.Drawing.Size(203, 20);
+            this.adminNombre.TabIndex = 10;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(691, 237);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(85, 17);
+            this.label29.TabIndex = 9;
+            this.label29.Text = "Contraseña:";
+            // 
+            // label28
+            // 
+            this.label28.AutoEllipsis = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(691, 175);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(79, 48);
+            this.label28.TabIndex = 8;
+            this.label28.Text = "Nombre de usuario:";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label28.Click += new System.EventHandler(this.label28_Click);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(691, 143);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(68, 17);
+            this.label27.TabIndex = 7;
+            this.label27.Text = "Telefono:";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(691, 114);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(35, 17);
+            this.label26.TabIndex = 6;
+            this.label26.Text = "DNI:";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(691, 83);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(62, 17);
+            this.label25.TabIndex = 5;
+            this.label25.Text = "Apellido:";
+            this.label25.Click += new System.EventHandler(this.label25_Click);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(691, 50);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(62, 17);
+            this.label24.TabIndex = 4;
+            this.label24.Text = "Nombre:";
+            // 
+            // adminID
+            // 
+            this.adminID.Location = new System.Drawing.Point(911, 17);
+            this.adminID.Name = "adminID";
+            this.adminID.ReadOnly = true;
+            this.adminID.Size = new System.Drawing.Size(24, 20);
+            this.adminID.TabIndex = 3;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(889, 17);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(25, 17);
+            this.label19.TabIndex = 2;
+            this.label19.Text = "ID:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(690, 14);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(135, 20);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "Carga de admin";
+            // 
+            // adminsDataGrid
+            // 
+            this.adminsDataGrid.AllowUserToAddRows = false;
+            this.adminsDataGrid.AllowUserToDeleteRows = false;
+            this.adminsDataGrid.AllowUserToOrderColumns = true;
+            this.adminsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.adminsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdAdmin,
+            this.NombreAdmin,
+            this.ApellidoAdmin,
+            this.TelefonoAdmin,
+            this.DniAdmin,
+            this.UsuarioAdmin,
+            this.PasswordAdmin,
+            this.AdminEditar,
+            this.AdminEliminar});
+            this.adminsDataGrid.Location = new System.Drawing.Point(0, 0);
+            this.adminsDataGrid.Name = "adminsDataGrid";
+            this.adminsDataGrid.Size = new System.Drawing.Size(679, 272);
+            this.adminsDataGrid.TabIndex = 0;
+            this.adminsDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.adminsDataGrid_CellContentClick);
+            this.adminsDataGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.adminsDataGrid_Format);
+            // 
+            // IdAdmin
+            // 
+            this.IdAdmin.DataPropertyName = "id";
+            this.IdAdmin.HeaderText = "ID";
+            this.IdAdmin.Name = "IdAdmin";
+            this.IdAdmin.ReadOnly = true;
+            this.IdAdmin.Width = 35;
+            // 
+            // NombreAdmin
+            // 
+            this.NombreAdmin.DataPropertyName = "nombre";
+            this.NombreAdmin.HeaderText = "Nombre";
+            this.NombreAdmin.Name = "NombreAdmin";
+            this.NombreAdmin.ReadOnly = true;
+            // 
+            // ApellidoAdmin
+            // 
+            this.ApellidoAdmin.DataPropertyName = "apellido";
+            this.ApellidoAdmin.HeaderText = "Apellido";
+            this.ApellidoAdmin.Name = "ApellidoAdmin";
+            this.ApellidoAdmin.ReadOnly = true;
+            // 
+            // TelefonoAdmin
+            // 
+            this.TelefonoAdmin.DataPropertyName = "telefono";
+            this.TelefonoAdmin.HeaderText = "Telefono";
+            this.TelefonoAdmin.Name = "TelefonoAdmin";
+            this.TelefonoAdmin.ReadOnly = true;
+            // 
+            // DniAdmin
+            // 
+            this.DniAdmin.DataPropertyName = "dni";
+            this.DniAdmin.HeaderText = "DNI";
+            this.DniAdmin.Name = "DniAdmin";
+            this.DniAdmin.ReadOnly = true;
+            // 
+            // UsuarioAdmin
+            // 
+            this.UsuarioAdmin.DataPropertyName = "usuario";
+            this.UsuarioAdmin.HeaderText = "Nombre de usuario";
+            this.UsuarioAdmin.Name = "UsuarioAdmin";
+            this.UsuarioAdmin.ReadOnly = true;
+            // 
+            // PasswordAdmin
+            // 
+            this.PasswordAdmin.DataPropertyName = "contraseña";
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.PasswordAdmin.DefaultCellStyle = dataGridViewCellStyle2;
+            this.PasswordAdmin.HeaderText = "Contraseña";
+            this.PasswordAdmin.Name = "PasswordAdmin";
+            this.PasswordAdmin.ReadOnly = true;
+            // 
+            // AdminEditar
+            // 
+            this.AdminEditar.HeaderText = "Editar";
+            this.AdminEditar.Name = "AdminEditar";
+            this.AdminEditar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.AdminEditar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.AdminEditar.Text = "Editar";
+            this.AdminEditar.ToolTipText = "Editar";
+            this.AdminEditar.UseColumnTextForButtonValue = true;
+            // 
+            // AdminEliminar
+            // 
+            this.AdminEliminar.HeaderText = "Eliminar";
+            this.AdminEliminar.Name = "AdminEliminar";
+            this.AdminEliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.AdminEliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.AdminEliminar.Text = "Eliminar";
+            this.AdminEliminar.ToolTipText = "Eliminar";
+            this.AdminEliminar.UseColumnTextForButtonValue = true;
             // 
             // autores
             // 
@@ -1321,6 +1952,7 @@
             // 
             // label14
             // 
+>>>>>>> Stashed changes
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(776, 7);
@@ -1357,13 +1989,20 @@
             this.logout.TabIndex = 1;
             this.logout.Text = "SALIR";
             this.logout.UseVisualStyleBackColor = true;
+<<<<<<< Updated upstream
             this.logout.Click += new System.EventHandler(this.logout_Click);
+=======
+>>>>>>> Stashed changes
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< Updated upstream
             this.ClientSize = new System.Drawing.Size(1090, 366);
+=======
+            this.ClientSize = new System.Drawing.Size(1028, 366);
+>>>>>>> Stashed changes
             this.Controls.Add(this.logout);
             this.Controls.Add(this.tabControl);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -1379,6 +2018,12 @@
             this.clientes.ResumeLayout(false);
             this.clientes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientesDataGrid)).EndInit();
+<<<<<<< Updated upstream
+=======
+            this.administradores.ResumeLayout(false);
+            this.administradores.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.adminsDataGrid)).EndInit();
+>>>>>>> Stashed changes
             this.autores.ResumeLayout(false);
             this.autores.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.autoresDataGrid)).EndInit();
@@ -1466,6 +2111,7 @@
         public System.Windows.Forms.Label label23;
         public System.Windows.Forms.TextBox cliente1;
         private System.Windows.Forms.TextBox cliente4;
+<<<<<<< Updated upstream
         private System.Windows.Forms.DataGridView prestamosDataGrid;
         public System.Windows.Forms.Button btnReset;
         public System.Windows.Forms.Button btnGuardar;
@@ -1505,6 +2151,35 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn administrador;
         private System.Windows.Forms.DataGridViewButtonColumn btnEditar;
         private System.Windows.Forms.DataGridViewButtonColumn btnEliminar;
+=======
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        public System.Windows.Forms.TextBox adminID;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox adminNombre;
+        private System.Windows.Forms.TextBox adminContra;
+        private System.Windows.Forms.TextBox adminUser;
+        private System.Windows.Forms.TextBox adminTelefono;
+        private System.Windows.Forms.TextBox adminDNI;
+        private System.Windows.Forms.TextBox adminApellido;
+        private System.Windows.Forms.Button limpiarAdmin;
+        private System.Windows.Forms.Button guardarAdmin;
+        public System.Windows.Forms.DataGridView adminsDataGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdAdmin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreAdmin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoAdmin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TelefonoAdmin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DniAdmin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UsuarioAdmin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PasswordAdmin;
+        private System.Windows.Forms.DataGridViewButtonColumn AdminEditar;
+        private System.Windows.Forms.DataGridViewButtonColumn AdminEliminar;
+>>>>>>> Stashed changes
     }
 }
 
