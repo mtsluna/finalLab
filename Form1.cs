@@ -21,11 +21,9 @@ namespace final
         LibroController libroController = new LibroController();
         AutorController autorController = new AutorController();
         ClienteController clienteController = new ClienteController();
-<<<<<<< Updated upstream
         PrestamoController prestamoController = new PrestamoController();
-=======
         AdministradorController adminController = new AdministradorController();
->>>>>>> Stashed changes
+
 
         public Form1()
         {
@@ -34,12 +32,10 @@ namespace final
             refreshLibros();
             refreshAutores();
             refreshCliente();
-<<<<<<< Updated upstream
             refreshPrestamo();
-=======
             refreshAdmins();
             
->>>>>>> Stashed changes
+
 
             //autores en libros
             autoresEnLibros.DataSource = autorController.FillAll(true);
@@ -201,13 +197,13 @@ namespace final
             clientesDataGrid.DataSource = clienteController.FillAll(false);
         }
 
-<<<<<<< Updated upstream
+
         public void refreshPrestamo()
         {
             prestamosDataGrid.AutoGenerateColumns = false;
             prestamosDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             prestamosDataGrid.DataSource = prestamoController.FillAllLoans();
-=======
+
         
         public void refreshAdmins()
         {
@@ -215,7 +211,7 @@ namespace final
             adminsDataGrid.AutoGenerateColumns = false;
             adminsDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             adminsDataGrid.DataSource = adminController.FillAll(false);
->>>>>>> Stashed changes
+
         }
 
         public void label1_Click_1(object sender, EventArgs e)

@@ -98,11 +98,8 @@
     <Compile Include="controllers\AutorController.cs" />
     <Compile Include="controllers\ClienteController.cs" />
     <Compile Include="controllers\LibroController.cs" />
-<<<<<<< Updated upstream
     <Compile Include="controllers\PrestamoController.cs" />
-=======
     <Compile Include="daos\AdministradorDAO.cs" />
->>>>>>> Stashed changes
     <Compile Include="daos\AutorDAO.cs" />
     <Compile Include="daos\ClienteDAO.cs" />
     <Compile Include="daos\LibroDAO.cs" />

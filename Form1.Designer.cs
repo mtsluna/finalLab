@@ -2111,7 +2111,6 @@
         public System.Windows.Forms.Label label23;
         public System.Windows.Forms.TextBox cliente1;
         private System.Windows.Forms.TextBox cliente4;
-<<<<<<< Updated upstream
         private System.Windows.Forms.DataGridView prestamosDataGrid;
         public System.Windows.Forms.Button btnReset;
         public System.Windows.Forms.Button btnGuardar;
@@ -2151,7 +2150,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn administrador;
         private System.Windows.Forms.DataGridViewButtonColumn btnEditar;
         private System.Windows.Forms.DataGridViewButtonColumn btnEliminar;
-=======
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label27;
@@ -2179,7 +2177,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PasswordAdmin;
         private System.Windows.Forms.DataGridViewButtonColumn AdminEditar;
         private System.Windows.Forms.DataGridViewButtonColumn AdminEliminar;
->>>>>>> Stashed changes
     }
 }
 
