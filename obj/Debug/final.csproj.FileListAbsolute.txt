@@ -68,3 +68,38 @@ C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\o
 C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\obj\Debug\final.csproj.CopyComplete
 C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\obj\Debug\final.exe
 C:\Agustin\Aconcagua\Segundo Cuatrimestre Segundo Año\Laboratorio II\finalLab\obj\Debug\final.pdb
+D:\Franco\PROGRAMACION\C#\finalLab\bin\Debug\final.exe.config
+D:\Franco\PROGRAMACION\C#\finalLab\bin\Debug\final.exe
+D:\Franco\PROGRAMACION\C#\finalLab\bin\Debug\final.pdb
+D:\Franco\PROGRAMACION\C#\finalLab\bin\Debug\BouncyCastle.Crypto.dll
+D:\Franco\PROGRAMACION\C#\finalLab\bin\Debug\Google.Protobuf.dll
+D:\Franco\PROGRAMACION\C#\finalLab\bin\Debug\K4os.Compression.LZ4.dll
+D:\Franco\PROGRAMACION\C#\finalLab\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Franco\PROGRAMACION\C#\finalLab\bin\Debug\K4os.Hash.xxHash.dll
+D:\Franco\PROGRAMACION\C#\finalLab\bin\Debug\MySql.Data.dll
+D:\Franco\PROGRAMACION\C#\finalLab\bin\Debug\Renci.SshNet.dll
+D:\Franco\PROGRAMACION\C#\finalLab\bin\Debug\System.Buffers.dll
+D:\Franco\PROGRAMACION\C#\finalLab\bin\Debug\System.Memory.dll
+D:\Franco\PROGRAMACION\C#\finalLab\bin\Debug\System.Numerics.Vectors.dll
+D:\Franco\PROGRAMACION\C#\finalLab\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Franco\PROGRAMACION\C#\finalLab\bin\Debug\Ubiety.Dns.Core.dll
+D:\Franco\PROGRAMACION\C#\finalLab\bin\Debug\Zstandard.Net.dll
+D:\Franco\PROGRAMACION\C#\finalLab\bin\Debug\Google.Protobuf.pdb
+D:\Franco\PROGRAMACION\C#\finalLab\bin\Debug\Google.Protobuf.xml
+D:\Franco\PROGRAMACION\C#\finalLab\bin\Debug\K4os.Compression.LZ4.xml
+D:\Franco\PROGRAMACION\C#\finalLab\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\Franco\PROGRAMACION\C#\finalLab\bin\Debug\K4os.Hash.xxHash.xml
+D:\Franco\PROGRAMACION\C#\finalLab\bin\Debug\MySql.Data.xml
+D:\Franco\PROGRAMACION\C#\finalLab\bin\Debug\Renci.SshNet.xml
+D:\Franco\PROGRAMACION\C#\finalLab\bin\Debug\System.Buffers.xml
+D:\Franco\PROGRAMACION\C#\finalLab\bin\Debug\System.Memory.xml
+D:\Franco\PROGRAMACION\C#\finalLab\bin\Debug\System.Numerics.Vectors.xml
+D:\Franco\PROGRAMACION\C#\finalLab\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Franco\PROGRAMACION\C#\finalLab\obj\Debug\final.csprojAssemblyReference.cache
+D:\Franco\PROGRAMACION\C#\finalLab\obj\Debug\final.Form1.resources
+D:\Franco\PROGRAMACION\C#\finalLab\obj\Debug\final.Properties.Resources.resources
+D:\Franco\PROGRAMACION\C#\finalLab\obj\Debug\final.csproj.GenerateResource.cache
+D:\Franco\PROGRAMACION\C#\finalLab\obj\Debug\final.csproj.CoreCompileInputs.cache
+D:\Franco\PROGRAMACION\C#\finalLab\obj\Debug\final.csproj.CopyComplete
+D:\Franco\PROGRAMACION\C#\finalLab\obj\Debug\final.exe
+D:\Franco\PROGRAMACION\C#\finalLab\obj\Debug\final.pdb

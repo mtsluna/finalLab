@@ -21,6 +21,7 @@ namespace final
         AutorController autorController = new AutorController();
         ClienteController clienteController = new ClienteController();
         PrestamoController prestamoController = new PrestamoController();
+        AdministradorController adminController = new AdministradorController();
 
         public Form1()
         {
@@ -30,6 +31,7 @@ namespace final
             refreshAutores();
             refreshCliente();
             refreshPrestamo();
+            refreshAdmins();
 
             //autores en libros
             autoresEnLibros.DataSource = autorController.FillAll(true);
@@ -454,6 +456,115 @@ namespace final
                     row.DefaultCellStyle.BackColor = Color.White;
                 }
             }
+        }
+
+        private void label30_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void refreshAdmins()
+        {
+            //Tabla de administradores
+            adminsDataGrid.AutoGenerateColumns = false;
+            adminsDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            adminsDataGrid.DataSource = adminController.FillAll(false);
+
+        }
+
+        private void adminsDataGrid_PassFormat(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 6 && e.Value != null)
+            {
+                e.Value = new String('*', e.Value.ToString().Length);
+            }
+        }
+
+        private void adminsDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                Console.WriteLine(e.ColumnIndex);
+                Console.WriteLine(e.RowIndex);
+                switch (e.ColumnIndex)
+                {
+                    case 7:
+                        setDataToEditAdmin(e.RowIndex);
+                        break;
+                    case 8:
+                        deleteAdmin(e.RowIndex);
+                        refreshAdmins();
+                        break;
+                }
+            }
+        }
+
+        public void setDataToEditAdmin(int index)
+        {
+            DataGridViewRow row = adminsDataGrid.Rows[index];
+            inputIDAdmin.Text = row.Cells[0].Value.ToString();
+            inputNombreAdmin.Text = row.Cells[1].Value.ToString();
+            inputApellidoAdmin.Text = row.Cells[2].Value.ToString();
+            inputTelefonoAdmin.Text = row.Cells[3].Value.ToString();
+            inputDniAdmin.Text = row.Cells[4].Value.ToString();
+            inputUserAdmin.Text = row.Cells[5].Value.ToString();
+            inputContraAdmin.Text = row.Cells[6].Value.ToString();
+        }
+
+        public void deleteAdmin(int index)
+        {
+            DataGridViewRow row = adminsDataGrid.Rows[index];
+            adminController.deleteAdmin(Int32.Parse(row.Cells[0].Value.ToString()));
+        }
+
+        private void limpiarAdmin_Click(object sender, EventArgs e)
+        {
+            inputIDAdmin.Text = "";
+            inputNombreAdmin.Text = "";
+            inputApellidoAdmin.Text = "";
+            inputTelefonoAdmin.Text = "";
+            inputDniAdmin.Text = "";
+            inputUserAdmin.Text = "";
+            inputContraAdmin.Text = "";
+        }
+
+        private void guardarAdmin_Click(object sender, EventArgs e)
+        {
+            Administrador admin = new Administrador();
+            admin.nombre = inputIDAdmin.Text;
+            admin.apellido = inputNombreAdmin.Text;
+            admin.telefono = inputApellidoAdmin.Text;
+            admin.dni = inputDniAdmin.Text;
+            admin.usuario = inputUserAdmin.Text;
+            admin.contraseña = inputContraAdmin.Text;
+            if (inputIDAdmin.Text.Equals(""))
+            {
+                adminController.insertAdmin(admin);
+            }
+            else
+            {
+                admin.id = Int16.Parse(inputIDAdmin.Text);
+                adminController.updateAdmin(admin);
+            }
+            refreshAdmins();
+            inputIDAdmin.Text = "";
+            inputNombreAdmin.Text = "";
+            inputApellidoAdmin.Text = "";
+            inputTelefonoAdmin.Text = "";
+            inputDniAdmin.Text = "";
+            inputUserAdmin.Text = "";
+            inputContraAdmin.Text = "";
+        }
+
+        private void limpiarAdmin_Click_1(object sender, EventArgs e)
+        {
+            inputIDAdmin.Text = "";
+            inputNombreAdmin.Text = "";
+            inputApellidoAdmin.Text = "";
+            inputTelefonoAdmin.Text = "";
+            inputDniAdmin.Text = "";
+            inputUserAdmin.Text = "";
+            inputContraAdmin.Text = "";
         }
     }
 }

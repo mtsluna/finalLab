@@ -145,6 +145,34 @@
             this.Nombre = new System.Windows.Forms.Label();
             this.autor1 = new System.Windows.Forms.TextBox();
             this.logout = new System.Windows.Forms.Button();
+            this.adminsDataGrid = new System.Windows.Forms.DataGridView();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.inputNombreAdmin = new System.Windows.Forms.TextBox();
+            this.inputApellidoAdmin = new System.Windows.Forms.TextBox();
+            this.inputDniAdmin = new System.Windows.Forms.TextBox();
+            this.inputTelefonoAdmin = new System.Windows.Forms.TextBox();
+            this.inputUserAdmin = new System.Windows.Forms.TextBox();
+            this.inputContraAdmin = new System.Windows.Forms.TextBox();
+            this.guardarAdmin = new System.Windows.Forms.Button();
+            this.limpiarAdmin = new System.Windows.Forms.Button();
+            this.inputIDAdmin = new System.Windows.Forms.TextBox();
+            this.AdminID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminDNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminContra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminEditar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.AdminEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl.SuspendLayout();
             this.prestamos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDataGrid)).BeginInit();
@@ -152,8 +180,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.librosDataGrid)).BeginInit();
             this.clientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientesDataGrid)).BeginInit();
+            this.administradores.SuspendLayout();
             this.autores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.autoresDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adminsDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -1146,6 +1176,25 @@
             // 
             // administradores
             // 
+            this.administradores.Controls.Add(this.inputIDAdmin);
+            this.administradores.Controls.Add(this.limpiarAdmin);
+            this.administradores.Controls.Add(this.guardarAdmin);
+            this.administradores.Controls.Add(this.inputContraAdmin);
+            this.administradores.Controls.Add(this.inputUserAdmin);
+            this.administradores.Controls.Add(this.inputTelefonoAdmin);
+            this.administradores.Controls.Add(this.inputDniAdmin);
+            this.administradores.Controls.Add(this.inputApellidoAdmin);
+            this.administradores.Controls.Add(this.inputNombreAdmin);
+            this.administradores.Controls.Add(this.label38);
+            this.administradores.Controls.Add(this.label37);
+            this.administradores.Controls.Add(this.label36);
+            this.administradores.Controls.Add(this.label35);
+            this.administradores.Controls.Add(this.label34);
+            this.administradores.Controls.Add(this.label33);
+            this.administradores.Controls.Add(this.label32);
+            this.administradores.Controls.Add(this.label31);
+            this.administradores.Controls.Add(this.label30);
+            this.administradores.Controls.Add(this.adminsDataGrid);
             this.administradores.Location = new System.Drawing.Point(4, 22);
             this.administradores.Margin = new System.Windows.Forms.Padding(2);
             this.administradores.Name = "administradores";
@@ -1359,6 +1408,254 @@
             this.logout.UseVisualStyleBackColor = true;
             this.logout.Click += new System.EventHandler(this.logout_Click);
             // 
+            // adminsDataGrid
+            // 
+            this.adminsDataGrid.AllowUserToAddRows = false;
+            this.adminsDataGrid.AllowUserToOrderColumns = true;
+            this.adminsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.adminsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.AdminID,
+            this.AdminNombre,
+            this.AdminApellido,
+            this.AdminDNI,
+            this.AdminTelefono,
+            this.AdminUser,
+            this.AdminContra,
+            this.AdminEditar,
+            this.AdminEliminar});
+            this.adminsDataGrid.Location = new System.Drawing.Point(-4, 0);
+            this.adminsDataGrid.Name = "adminsDataGrid";
+            this.adminsDataGrid.Size = new System.Drawing.Size(774, 309);
+            this.adminsDataGrid.TabIndex = 0;
+            this.adminsDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.adminsDataGrid_CellContentClick);
+            this.adminsDataGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.adminsDataGrid_PassFormat);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(800, 34);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(0, 13);
+            this.label30.TabIndex = 1;
+            this.label30.Click += new System.EventHandler(this.label30_Click);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(790, 14);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(144, 20);
+            this.label31.TabIndex = 2;
+            this.label31.Text = "Carga de admins";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(969, 14);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(33, 20);
+            this.label32.TabIndex = 3;
+            this.label32.Text = "ID:";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(791, 60);
+            this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(47, 13);
+            this.label33.TabIndex = 28;
+            this.label33.Text = "Nombre:";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(791, 94);
+            this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(47, 13);
+            this.label34.TabIndex = 29;
+            this.label34.Text = "Apellido:";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(791, 125);
+            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(29, 13);
+            this.label35.TabIndex = 30;
+            this.label35.Text = "DNI:";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(791, 153);
+            this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(52, 13);
+            this.label36.TabIndex = 31;
+            this.label36.Text = "Teléfono:";
+            // 
+            // label37
+            // 
+            this.label37.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label37.Location = new System.Drawing.Point(791, 182);
+            this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(64, 32);
+            this.label37.TabIndex = 32;
+            this.label37.Text = "Nombre de usuario:";
+            this.label37.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(791, 223);
+            this.label38.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(64, 13);
+            this.label38.TabIndex = 33;
+            this.label38.Text = "Contraseña:";
+            // 
+            // inputNombreAdmin
+            // 
+            this.inputNombreAdmin.Location = new System.Drawing.Point(862, 57);
+            this.inputNombreAdmin.Name = "inputNombreAdmin";
+            this.inputNombreAdmin.Size = new System.Drawing.Size(179, 20);
+            this.inputNombreAdmin.TabIndex = 34;
+            // 
+            // inputApellidoAdmin
+            // 
+            this.inputApellidoAdmin.Location = new System.Drawing.Point(862, 91);
+            this.inputApellidoAdmin.Name = "inputApellidoAdmin";
+            this.inputApellidoAdmin.Size = new System.Drawing.Size(179, 20);
+            this.inputApellidoAdmin.TabIndex = 35;
+            // 
+            // inputDniAdmin
+            // 
+            this.inputDniAdmin.Location = new System.Drawing.Point(862, 122);
+            this.inputDniAdmin.Name = "inputDniAdmin";
+            this.inputDniAdmin.Size = new System.Drawing.Size(179, 20);
+            this.inputDniAdmin.TabIndex = 36;
+            // 
+            // inputTelefonoAdmin
+            // 
+            this.inputTelefonoAdmin.Location = new System.Drawing.Point(862, 150);
+            this.inputTelefonoAdmin.Name = "inputTelefonoAdmin";
+            this.inputTelefonoAdmin.Size = new System.Drawing.Size(179, 20);
+            this.inputTelefonoAdmin.TabIndex = 37;
+            // 
+            // inputUserAdmin
+            // 
+            this.inputUserAdmin.Location = new System.Drawing.Point(862, 194);
+            this.inputUserAdmin.Name = "inputUserAdmin";
+            this.inputUserAdmin.Size = new System.Drawing.Size(179, 20);
+            this.inputUserAdmin.TabIndex = 38;
+            // 
+            // inputContraAdmin
+            // 
+            this.inputContraAdmin.Location = new System.Drawing.Point(862, 223);
+            this.inputContraAdmin.Name = "inputContraAdmin";
+            this.inputContraAdmin.Size = new System.Drawing.Size(179, 20);
+            this.inputContraAdmin.TabIndex = 39;
+            // 
+            // guardarAdmin
+            // 
+            this.guardarAdmin.Location = new System.Drawing.Point(803, 262);
+            this.guardarAdmin.Name = "guardarAdmin";
+            this.guardarAdmin.Size = new System.Drawing.Size(109, 32);
+            this.guardarAdmin.TabIndex = 40;
+            this.guardarAdmin.Text = "Guardar";
+            this.guardarAdmin.UseVisualStyleBackColor = true;
+            this.guardarAdmin.Click += new System.EventHandler(this.guardarAdmin_Click);
+            // 
+            // limpiarAdmin
+            // 
+            this.limpiarAdmin.Location = new System.Drawing.Point(932, 262);
+            this.limpiarAdmin.Name = "limpiarAdmin";
+            this.limpiarAdmin.Size = new System.Drawing.Size(109, 32);
+            this.limpiarAdmin.TabIndex = 41;
+            this.limpiarAdmin.Text = "Reset";
+            this.limpiarAdmin.UseVisualStyleBackColor = true;
+            this.limpiarAdmin.Click += new System.EventHandler(this.limpiarAdmin_Click_1);
+            // 
+            // inputIDAdmin
+            // 
+            this.inputIDAdmin.Cursor = System.Windows.Forms.Cursors.No;
+            this.inputIDAdmin.Location = new System.Drawing.Point(999, 14);
+            this.inputIDAdmin.Name = "inputIDAdmin";
+            this.inputIDAdmin.ReadOnly = true;
+            this.inputIDAdmin.Size = new System.Drawing.Size(42, 20);
+            this.inputIDAdmin.TabIndex = 42;
+            // 
+            // AdminID
+            // 
+            this.AdminID.DataPropertyName = "id";
+            this.AdminID.HeaderText = "ID";
+            this.AdminID.Name = "AdminID";
+            this.AdminID.ReadOnly = true;
+            // 
+            // AdminNombre
+            // 
+            this.AdminNombre.DataPropertyName = "nombre";
+            this.AdminNombre.HeaderText = "Nombre";
+            this.AdminNombre.Name = "AdminNombre";
+            this.AdminNombre.ReadOnly = true;
+            // 
+            // AdminApellido
+            // 
+            this.AdminApellido.DataPropertyName = "apellido";
+            this.AdminApellido.HeaderText = "Apellido";
+            this.AdminApellido.Name = "AdminApellido";
+            this.AdminApellido.ReadOnly = true;
+            // 
+            // AdminDNI
+            // 
+            this.AdminDNI.DataPropertyName = "dni";
+            this.AdminDNI.HeaderText = "DNI";
+            this.AdminDNI.Name = "AdminDNI";
+            this.AdminDNI.ReadOnly = true;
+            // 
+            // AdminTelefono
+            // 
+            this.AdminTelefono.DataPropertyName = "telefono";
+            this.AdminTelefono.HeaderText = "Telefono";
+            this.AdminTelefono.Name = "AdminTelefono";
+            this.AdminTelefono.ReadOnly = true;
+            // 
+            // AdminUser
+            // 
+            this.AdminUser.DataPropertyName = "usuario";
+            this.AdminUser.HeaderText = "Usuario";
+            this.AdminUser.Name = "AdminUser";
+            this.AdminUser.ReadOnly = true;
+            // 
+            // AdminContra
+            // 
+            this.AdminContra.DataPropertyName = "contraseña";
+            this.AdminContra.HeaderText = "Contraseña";
+            this.AdminContra.Name = "AdminContra";
+            this.AdminContra.ReadOnly = true;
+            // 
+            // AdminEditar
+            // 
+            this.AdminEditar.HeaderText = "Editar";
+            this.AdminEditar.Name = "AdminEditar";
+            this.AdminEditar.Text = "Editar";
+            this.AdminEditar.ToolTipText = "Editar";
+            this.AdminEditar.UseColumnTextForButtonValue = true;
+            // 
+            // AdminEliminar
+            // 
+            this.AdminEliminar.HeaderText = "Eliminar";
+            this.AdminEliminar.Name = "AdminEliminar";
+            this.AdminEliminar.Text = "Eliminar";
+            this.AdminEliminar.ToolTipText = "Eliminar";
+            this.AdminEliminar.UseColumnTextForButtonValue = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1379,9 +1676,12 @@
             this.clientes.ResumeLayout(false);
             this.clientes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientesDataGrid)).EndInit();
+            this.administradores.ResumeLayout(false);
+            this.administradores.PerformLayout();
             this.autores.ResumeLayout(false);
             this.autores.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.autoresDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adminsDataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1505,6 +1805,34 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn administrador;
         private System.Windows.Forms.DataGridViewButtonColumn btnEditar;
         private System.Windows.Forms.DataGridViewButtonColumn btnEliminar;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.DataGridView adminsDataGrid;
+        public System.Windows.Forms.Label label38;
+        public System.Windows.Forms.Label label37;
+        public System.Windows.Forms.Label label36;
+        public System.Windows.Forms.Label label35;
+        public System.Windows.Forms.Label label34;
+        public System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Button limpiarAdmin;
+        private System.Windows.Forms.Button guardarAdmin;
+        private System.Windows.Forms.TextBox inputContraAdmin;
+        private System.Windows.Forms.TextBox inputUserAdmin;
+        private System.Windows.Forms.TextBox inputTelefonoAdmin;
+        private System.Windows.Forms.TextBox inputDniAdmin;
+        private System.Windows.Forms.TextBox inputApellidoAdmin;
+        private System.Windows.Forms.TextBox inputNombreAdmin;
+        private System.Windows.Forms.TextBox inputIDAdmin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdminID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdminNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdminApellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdminDNI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdminTelefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdminUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdminContra;
+        private System.Windows.Forms.DataGridViewButtonColumn AdminEditar;
+        private System.Windows.Forms.DataGridViewButtonColumn AdminEliminar;
     }
 }
 

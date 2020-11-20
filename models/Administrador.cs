@@ -10,6 +10,6 @@ namespace final.models
     {
         public String telefono;
         public String usuario;
-        public String password;
+        public String contraseña;
     }
 }
