@@ -44,6 +44,9 @@ namespace final
             //Rellenar combo de libros
             rellenarComboLibros();
 
+            //Rellenar combo de administradores
+            rellenarComboAdmin();
+
             resetPrestamo();
         }
 
@@ -64,6 +67,13 @@ namespace final
             cmbCliente.DataSource = clienteController.FillAll(true);
             cmbCliente.DisplayMember = "nombre";
             cmbCliente.ValueMember = "id";
+        }
+
+        public void rellenarComboAdmin()
+        {
+            cmbAdministrador.DataSource = adminController.FillAll(true);
+            cmbAdministrador.DisplayMember = "admin";
+            cmbAdministrador.ValueMember = "id";
         }
 
         public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -136,10 +146,10 @@ namespace final
             txtIdPrestamo.Text = row.Cells[0].Value.ToString();
             cmbCliente.SelectedValue = row.Cells[1].Value.ToString();
             cmbLibro.SelectedValue = row.Cells[2].Value.ToString();
-            dtpFPrestamo.Text = row.Cells[5].Value.ToString();
-            dtpFDevolucion.Text = row.Cells[6].Value.ToString();
-            cmbDevuelto.SelectedItem = row.Cells[7].Value.ToString();
-            //cmbAdministrador.SelectedValue = row.Cells[8].Value.ToString();
+            dtpFPrestamo.Text = row.Cells[6].Value.ToString();
+            dtpFDevolucion.Text = row.Cells[7].Value.ToString();
+            cmbDevuelto.SelectedItem = row.Cells[8].Value.ToString();
+            cmbAdministrador.SelectedValue = row.Cells[3].Value.ToString();
         }
 
         public void deleteLibro(int index)
@@ -379,6 +389,7 @@ namespace final
             cmbDevuelto.Enabled = false;
             dtpFPrestamo.Value = DateTime.Now;
             dtpFDevolucion.Value = DateTime.Now;
+            cmbAdministrador.SelectedIndex = -1;
         }
 
         private void prestamosDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -387,10 +398,10 @@ namespace final
             {
                 switch (e.ColumnIndex)
                 {
-                    case 9:
+                    case 10:
                         setDataToEditPrestamo(e.RowIndex);
                         break;
-                    case 10:
+                    case 11:
                         deletePrestamo(e.RowIndex);
                         refreshPrestamo();
                         break;
@@ -400,7 +411,7 @@ namespace final
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (cmbCliente.SelectedIndex != -1 && cmbLibro.SelectedIndex != -1)
+            if (cmbCliente.SelectedIndex != -1 && cmbLibro.SelectedIndex != -1 && cmbAdministrador.SelectedIndex != -1)
             {
                 Cliente cliente = new Cliente();
                 cliente.id = Convert.ToInt32(cmbCliente.SelectedValue);
@@ -408,7 +419,10 @@ namespace final
                 Libro libro = new Libro(null);
                 libro.id = Convert.ToInt32(cmbLibro.SelectedValue);
 
-                Prestamo prestamo = new Prestamo(cliente, libro);
+                Administrador administrador = new Administrador();
+                administrador.id = Convert.ToInt32(cmbAdministrador.SelectedValue);
+
+                Prestamo prestamo = new Prestamo(cliente, libro, administrador);
                 prestamo.fechaPrestamo = dtpFPrestamo.Value.ToString("yyyy-MM-dd");
                 prestamo.fechaDevolucion = dtpFDevolucion.Value.ToString("yyyy-MM-dd");
                 prestamo.devuelto = ((cmbDevuelto.SelectedItem.ToString()) == "No") ? 'N' : 'S';
@@ -443,13 +457,14 @@ namespace final
         {
             foreach (DataGridViewRow row in prestamosDataGrid.Rows)
             {
-                if (row.Cells[7].Value.ToString() == "No" && Convert.ToDateTime(row.Cells[6].Value) >= DateTime.Now)
+                if (row.Cells[8].Value.ToString() == "No" && Convert.ToDateTime(row.Cells[7].Value) >= DateTime.Now)
                 {
                     row.DefaultCellStyle.BackColor = Color.Yellow;
                 }
-                else if (row.Cells[7].Value.ToString() == "No" && Convert.ToDateTime(row.Cells[6].Value) < DateTime.Now)
+                else if (row.Cells[8].Value.ToString() == "No" && Convert.ToDateTime(row.Cells[7].Value) < DateTime.Now)
                 {
-                    row.DefaultCellStyle.BackColor = Color.Red;
+                    row.DefaultCellStyle.BackColor = Color.IndianRed;
+                    row.DefaultCellStyle.ForeColor = Color.White;
                 }
                 else
                 {
@@ -505,8 +520,8 @@ namespace final
             inputIDAdmin.Text = row.Cells[0].Value.ToString();
             inputNombreAdmin.Text = row.Cells[1].Value.ToString();
             inputApellidoAdmin.Text = row.Cells[2].Value.ToString();
-            inputTelefonoAdmin.Text = row.Cells[3].Value.ToString();
-            inputDniAdmin.Text = row.Cells[4].Value.ToString();
+            inputDniAdmin.Text = row.Cells[3].Value.ToString();
+            inputTelefonoAdmin.Text = row.Cells[4].Value.ToString();
             inputUserAdmin.Text = row.Cells[5].Value.ToString();
             inputContraAdmin.Text = row.Cells[6].Value.ToString();
         }
@@ -531,12 +546,12 @@ namespace final
         private void guardarAdmin_Click(object sender, EventArgs e)
         {
             Administrador admin = new Administrador();
-            admin.nombre = inputIDAdmin.Text;
-            admin.apellido = inputNombreAdmin.Text;
-            admin.telefono = inputApellidoAdmin.Text;
+            admin.nombre = inputNombreAdmin.Text;
+            admin.apellido = inputApellidoAdmin.Text;
+            admin.telefono = inputTelefonoAdmin.Text;
             admin.dni = inputDniAdmin.Text;
             admin.usuario = inputUserAdmin.Text;
-            admin.contraseña = inputContraAdmin.Text;
+            admin.clave = inputContraAdmin.Text;
             if (inputIDAdmin.Text.Equals(""))
             {
                 adminController.insertAdmin(admin);
@@ -554,6 +569,8 @@ namespace final
             inputDniAdmin.Text = "";
             inputUserAdmin.Text = "";
             inputContraAdmin.Text = "";
+
+            rellenarComboAdmin();
         }
 
         private void limpiarAdmin_Click_1(object sender, EventArgs e)
@@ -565,6 +582,13 @@ namespace final
             inputDniAdmin.Text = "";
             inputUserAdmin.Text = "";
             inputContraAdmin.Text = "";
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            prestamosDataGrid.AutoGenerateColumns = false;
+            prestamosDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            prestamosDataGrid.DataSource = prestamoController.FillAllLoansByText(txtDatosPrestamo.Text);
         }
     }
 }

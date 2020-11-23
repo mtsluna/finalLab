@@ -14,7 +14,7 @@ namespace final.daos
     {
         public DataTable GetAllWC()
         {
-            MySqlCommand mySqlCommand = new MySqlCommand("SELECT id, CONCAT(nombre, '', apellido) as nombre FROM administrador", Connection.GetInstance());
+            MySqlCommand mySqlCommand = new MySqlCommand("SELECT id, CONCAT(nombre, ' ', apellido) as admin FROM administrador", Connection.GetInstance());
             MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter();
             mySqlDataAdapter.SelectCommand = mySqlCommand;
             DataTable dataTable = new DataTable();
@@ -58,14 +58,14 @@ namespace final.daos
 
         public void insertAdmin(Administrador admin)
         {
-            String query = $"INSERT INTO administrador(nombre,apellido,telefono,dni,usuario,contraseña) VALUES ('{admin.nombre}','{admin.apellido}','{admin.telefono}','{admin.dni}','{admin.usuario}','{admin.contraseña}')";
+            String query = $"INSERT INTO administrador(nombre,apellido,telefono,dni,usuario,clave) VALUES ('{admin.nombre}','{admin.apellido}','{admin.telefono}','{admin.dni}','{admin.usuario}','{admin.clave}')";
             MySqlCommand mySqlCommand = new MySqlCommand(query, Connection.GetInstance());
             mySqlCommand.ExecuteNonQuery();
         }
 
         public void updateAdmin(Administrador admin)
         {
-            String query = $"UPDATE administrador SET nombre = '{admin.nombre}', apellido = '{admin.apellido}', telefono = '{admin.telefono}', dni = '{admin.dni}', usuario = '{admin.usuario}', contraseña = '{admin.contraseña}' WHERE id = {admin.id}";
+            String query = $"UPDATE administrador SET nombre = '{admin.nombre}', apellido = '{admin.apellido}', telefono = '{admin.telefono}', dni = '{admin.dni}', usuario = '{admin.usuario}', clave = '{admin.clave}' WHERE id = {admin.id}";
             MySqlCommand mySqlCommand = new MySqlCommand(query, Connection.GetInstance());
             mySqlCommand.ExecuteNonQuery();
         }

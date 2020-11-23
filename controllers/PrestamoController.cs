@@ -18,6 +18,11 @@ namespace final.controllers
             return prestamoDAO.GetAll();
         }
 
+        public DataTable FillAllLoansByText(String text)
+        {
+            return prestamoDAO.GetAllByText(text);
+        }
+
         public void deleteLoan(int index)
         {
             prestamoDAO.deleteLoan(index);

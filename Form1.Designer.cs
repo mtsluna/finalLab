@@ -48,17 +48,6 @@
             this.txtIdPrestamo = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.prestamosDataGrid = new System.Windows.Forms.DataGridView();
-            this.idPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_LIBRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.libro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDevolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.devuelto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.administrador = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.libros = new System.Windows.Forms.TabPage();
             this.resetLibro = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -145,15 +134,6 @@
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.adminsDataGrid = new System.Windows.Forms.DataGridView();
-            this.AdminID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminDNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminContra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminEditar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.AdminEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.autores = new System.Windows.Forms.TabPage();
             this.resetAutor = new System.Windows.Forms.Button();
             this.guardarAutor = new System.Windows.Forms.Button();
@@ -173,6 +153,29 @@
             this.Nombre = new System.Windows.Forms.Label();
             this.autor1 = new System.Windows.Forms.TextBox();
             this.logout = new System.Windows.Forms.Button();
+            this.AdminID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminDNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminContra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminEditar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.AdminEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.idPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_LIBRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_ADMIN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.libro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDevolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.devuelto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.admin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.txtDatosPrestamo = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.prestamos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDataGrid)).BeginInit();
@@ -202,6 +205,8 @@
             // 
             // prestamos
             // 
+            this.prestamos.Controls.Add(this.btnBuscar);
+            this.prestamos.Controls.Add(this.txtDatosPrestamo);
             this.prestamos.Controls.Add(this.btnReset);
             this.prestamos.Controls.Add(this.btnGuardar);
             this.prestamos.Controls.Add(this.cmbAdministrador);
@@ -226,15 +231,15 @@
             this.prestamos.Padding = new System.Windows.Forms.Padding(2);
             this.prestamos.Size = new System.Drawing.Size(1064, 309);
             this.prestamos.TabIndex = 0;
-            this.prestamos.Text = "Prestamos";
+            this.prestamos.Text = "Préstamos";
             this.prestamos.UseVisualStyleBackColor = true;
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(921, 281);
+            this.btnReset.Location = new System.Drawing.Point(921, 269);
             this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(136, 19);
+            this.btnReset.Size = new System.Drawing.Size(109, 32);
             this.btnReset.TabIndex = 48;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
@@ -242,10 +247,10 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(779, 281);
+            this.btnGuardar.Location = new System.Drawing.Point(808, 269);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(136, 19);
+            this.btnGuardar.Size = new System.Drawing.Size(109, 32);
             this.btnGuardar.TabIndex = 47;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -392,7 +397,7 @@
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(171, 20);
             this.label15.TabIndex = 3;
-            this.label15.Text = "Carga de prestamos";
+            this.label15.Text = "Carga de préstamos";
             // 
             // prestamosDataGrid
             // 
@@ -404,89 +409,21 @@
             this.idPrestamo,
             this.ID_CLIENTE,
             this.ID_LIBRO,
+            this.ID_ADMIN,
             this.cliente,
             this.libro,
             this.fechaPrestamo,
             this.fechaDevolucion,
             this.devuelto,
-            this.administrador,
+            this.admin,
             this.btnEditar,
             this.btnEliminar});
             this.prestamosDataGrid.Location = new System.Drawing.Point(2, 2);
             this.prestamosDataGrid.Name = "prestamosDataGrid";
-            this.prestamosDataGrid.Size = new System.Drawing.Size(769, 309);
+            this.prestamosDataGrid.Size = new System.Drawing.Size(769, 271);
             this.prestamosDataGrid.TabIndex = 0;
             this.prestamosDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.prestamosDataGrid_CellContentClick);
             this.prestamosDataGrid.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.prestamosDataGrid_RowPostPaint);
-            // 
-            // idPrestamo
-            // 
-            this.idPrestamo.DataPropertyName = "id";
-            this.idPrestamo.HeaderText = "ID";
-            this.idPrestamo.Name = "idPrestamo";
-            // 
-            // ID_CLIENTE
-            // 
-            this.ID_CLIENTE.DataPropertyName = "id_cliente";
-            this.ID_CLIENTE.HeaderText = "ID Cliente";
-            this.ID_CLIENTE.Name = "ID_CLIENTE";
-            this.ID_CLIENTE.Visible = false;
-            // 
-            // ID_LIBRO
-            // 
-            this.ID_LIBRO.DataPropertyName = "id_libro";
-            this.ID_LIBRO.HeaderText = "ID Libro";
-            this.ID_LIBRO.Name = "ID_LIBRO";
-            this.ID_LIBRO.Visible = false;
-            // 
-            // cliente
-            // 
-            this.cliente.DataPropertyName = "cliente";
-            this.cliente.HeaderText = "Cliente";
-            this.cliente.Name = "cliente";
-            // 
-            // libro
-            // 
-            this.libro.DataPropertyName = "libro";
-            this.libro.HeaderText = "Libro";
-            this.libro.Name = "libro";
-            // 
-            // fechaPrestamo
-            // 
-            this.fechaPrestamo.DataPropertyName = "fechaPrestamo";
-            this.fechaPrestamo.HeaderText = "Fecha Préstamo";
-            this.fechaPrestamo.Name = "fechaPrestamo";
-            // 
-            // fechaDevolucion
-            // 
-            this.fechaDevolucion.DataPropertyName = "fechaDevolucion";
-            this.fechaDevolucion.HeaderText = "Fecha Devolución";
-            this.fechaDevolucion.Name = "fechaDevolucion";
-            // 
-            // devuelto
-            // 
-            this.devuelto.DataPropertyName = "devuelto";
-            this.devuelto.HeaderText = "Devuelto";
-            this.devuelto.Name = "devuelto";
-            // 
-            // administrador
-            // 
-            this.administrador.HeaderText = "Administrador";
-            this.administrador.Name = "administrador";
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.HeaderText = "Editar";
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseColumnTextForButtonValue = true;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.HeaderText = "Eliminar";
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseColumnTextForButtonValue = true;
             // 
             // libros
             // 
@@ -524,10 +461,10 @@
             // 
             // resetLibro
             // 
-            this.resetLibro.Location = new System.Drawing.Point(921, 281);
+            this.resetLibro.Location = new System.Drawing.Point(921, 269);
             this.resetLibro.Margin = new System.Windows.Forms.Padding(2);
             this.resetLibro.Name = "resetLibro";
-            this.resetLibro.Size = new System.Drawing.Size(136, 19);
+            this.resetLibro.Size = new System.Drawing.Size(109, 32);
             this.resetLibro.TabIndex = 25;
             this.resetLibro.Text = "Reset";
             this.resetLibro.UseVisualStyleBackColor = true;
@@ -576,7 +513,7 @@
             this.buscarLibros.Location = new System.Drawing.Point(2, 281);
             this.buscarLibros.Margin = new System.Windows.Forms.Padding(2);
             this.buscarLibros.Name = "buscarLibros";
-            this.buscarLibros.Size = new System.Drawing.Size(178, 19);
+            this.buscarLibros.Size = new System.Drawing.Size(178, 20);
             this.buscarLibros.TabIndex = 20;
             this.buscarLibros.Text = "Buscar por Titulo";
             this.buscarLibros.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -602,10 +539,10 @@
             // 
             // saveLibro
             // 
-            this.saveLibro.Location = new System.Drawing.Point(779, 281);
+            this.saveLibro.Location = new System.Drawing.Point(808, 269);
             this.saveLibro.Margin = new System.Windows.Forms.Padding(2);
             this.saveLibro.Name = "saveLibro";
-            this.saveLibro.Size = new System.Drawing.Size(136, 19);
+            this.saveLibro.Size = new System.Drawing.Size(109, 32);
             this.saveLibro.TabIndex = 17;
             this.saveLibro.Text = "Guardar";
             this.saveLibro.UseVisualStyleBackColor = true;
@@ -660,7 +597,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(48, 13);
             this.label8.TabIndex = 9;
-            this.label8.Text = "Paginas:";
+            this.label8.Text = "Páginas:";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label7
@@ -671,7 +608,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(110, 13);
             this.label7.TabIndex = 8;
-            this.label7.Text = "Lugar de Publicacion:";
+            this.label7.Text = "Lugar de Publicación:";
             // 
             // label6
             // 
@@ -711,7 +648,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Descripcion:";
+            this.label3.Text = "Descripción:";
             // 
             // label2
             // 
@@ -719,9 +656,9 @@
             this.label2.Location = new System.Drawing.Point(777, 44);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 13);
+            this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Titulo:";
+            this.label2.Text = "Título:";
             // 
             // label1
             // 
@@ -902,20 +839,20 @@
             // 
             // clienteReset
             // 
-            this.clienteReset.Location = new System.Drawing.Point(921, 281);
+            this.clienteReset.Location = new System.Drawing.Point(921, 269);
             this.clienteReset.Margin = new System.Windows.Forms.Padding(2);
             this.clienteReset.Name = "clienteReset";
-            this.clienteReset.Size = new System.Drawing.Size(136, 19);
+            this.clienteReset.Size = new System.Drawing.Size(109, 32);
             this.clienteReset.TabIndex = 45;
             this.clienteReset.Text = "Reset";
             this.clienteReset.UseVisualStyleBackColor = true;
             // 
             // clienteGuardar
             // 
-            this.clienteGuardar.Location = new System.Drawing.Point(779, 281);
+            this.clienteGuardar.Location = new System.Drawing.Point(808, 269);
             this.clienteGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.clienteGuardar.Name = "clienteGuardar";
-            this.clienteGuardar.Size = new System.Drawing.Size(136, 19);
+            this.clienteGuardar.Size = new System.Drawing.Size(109, 32);
             this.clienteGuardar.TabIndex = 44;
             this.clienteGuardar.Text = "Guardar";
             this.clienteGuardar.UseVisualStyleBackColor = true;
@@ -1203,15 +1140,16 @@
             // inputIDAdmin
             // 
             this.inputIDAdmin.Cursor = System.Windows.Forms.Cursors.No;
-            this.inputIDAdmin.Location = new System.Drawing.Point(999, 14);
+            this.inputIDAdmin.Enabled = false;
+            this.inputIDAdmin.Location = new System.Drawing.Point(995, 10);
             this.inputIDAdmin.Name = "inputIDAdmin";
             this.inputIDAdmin.ReadOnly = true;
-            this.inputIDAdmin.Size = new System.Drawing.Size(42, 20);
+            this.inputIDAdmin.Size = new System.Drawing.Size(62, 20);
             this.inputIDAdmin.TabIndex = 42;
             // 
             // limpiarAdmin
             // 
-            this.limpiarAdmin.Location = new System.Drawing.Point(932, 262);
+            this.limpiarAdmin.Location = new System.Drawing.Point(921, 269);
             this.limpiarAdmin.Name = "limpiarAdmin";
             this.limpiarAdmin.Size = new System.Drawing.Size(109, 32);
             this.limpiarAdmin.TabIndex = 41;
@@ -1221,7 +1159,7 @@
             // 
             // guardarAdmin
             // 
-            this.guardarAdmin.Location = new System.Drawing.Point(803, 262);
+            this.guardarAdmin.Location = new System.Drawing.Point(808, 269);
             this.guardarAdmin.Name = "guardarAdmin";
             this.guardarAdmin.Size = new System.Drawing.Size(109, 32);
             this.guardarAdmin.TabIndex = 40;
@@ -1231,50 +1169,50 @@
             // 
             // inputContraAdmin
             // 
-            this.inputContraAdmin.Location = new System.Drawing.Point(862, 223);
+            this.inputContraAdmin.Location = new System.Drawing.Point(846, 223);
             this.inputContraAdmin.Name = "inputContraAdmin";
-            this.inputContraAdmin.Size = new System.Drawing.Size(179, 20);
+            this.inputContraAdmin.Size = new System.Drawing.Size(212, 20);
             this.inputContraAdmin.TabIndex = 39;
             // 
             // inputUserAdmin
             // 
-            this.inputUserAdmin.Location = new System.Drawing.Point(862, 194);
+            this.inputUserAdmin.Location = new System.Drawing.Point(846, 194);
             this.inputUserAdmin.Name = "inputUserAdmin";
-            this.inputUserAdmin.Size = new System.Drawing.Size(179, 20);
+            this.inputUserAdmin.Size = new System.Drawing.Size(212, 20);
             this.inputUserAdmin.TabIndex = 38;
             // 
             // inputTelefonoAdmin
             // 
-            this.inputTelefonoAdmin.Location = new System.Drawing.Point(862, 150);
+            this.inputTelefonoAdmin.Location = new System.Drawing.Point(846, 150);
             this.inputTelefonoAdmin.Name = "inputTelefonoAdmin";
-            this.inputTelefonoAdmin.Size = new System.Drawing.Size(179, 20);
+            this.inputTelefonoAdmin.Size = new System.Drawing.Size(212, 20);
             this.inputTelefonoAdmin.TabIndex = 37;
             // 
             // inputDniAdmin
             // 
-            this.inputDniAdmin.Location = new System.Drawing.Point(862, 122);
+            this.inputDniAdmin.Location = new System.Drawing.Point(846, 122);
             this.inputDniAdmin.Name = "inputDniAdmin";
-            this.inputDniAdmin.Size = new System.Drawing.Size(179, 20);
+            this.inputDniAdmin.Size = new System.Drawing.Size(212, 20);
             this.inputDniAdmin.TabIndex = 36;
             // 
             // inputApellidoAdmin
             // 
-            this.inputApellidoAdmin.Location = new System.Drawing.Point(862, 91);
+            this.inputApellidoAdmin.Location = new System.Drawing.Point(846, 91);
             this.inputApellidoAdmin.Name = "inputApellidoAdmin";
-            this.inputApellidoAdmin.Size = new System.Drawing.Size(179, 20);
+            this.inputApellidoAdmin.Size = new System.Drawing.Size(212, 20);
             this.inputApellidoAdmin.TabIndex = 35;
             // 
             // inputNombreAdmin
             // 
-            this.inputNombreAdmin.Location = new System.Drawing.Point(862, 57);
+            this.inputNombreAdmin.Location = new System.Drawing.Point(846, 57);
             this.inputNombreAdmin.Name = "inputNombreAdmin";
-            this.inputNombreAdmin.Size = new System.Drawing.Size(179, 20);
+            this.inputNombreAdmin.Size = new System.Drawing.Size(212, 20);
             this.inputNombreAdmin.TabIndex = 34;
             // 
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(791, 223);
+            this.label38.Location = new System.Drawing.Point(777, 223);
             this.label38.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(64, 13);
@@ -1284,7 +1222,7 @@
             // label37
             // 
             this.label37.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label37.Location = new System.Drawing.Point(791, 182);
+            this.label37.Location = new System.Drawing.Point(777, 182);
             this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(64, 32);
@@ -1295,7 +1233,7 @@
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(791, 153);
+            this.label36.Location = new System.Drawing.Point(777, 153);
             this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(52, 13);
@@ -1305,7 +1243,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(791, 125);
+            this.label35.Location = new System.Drawing.Point(777, 125);
             this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(29, 13);
@@ -1315,7 +1253,7 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(791, 94);
+            this.label34.Location = new System.Drawing.Point(777, 94);
             this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(47, 13);
@@ -1325,7 +1263,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(791, 60);
+            this.label33.Location = new System.Drawing.Point(777, 60);
             this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(47, 13);
@@ -1335,10 +1273,10 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(969, 14);
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(972, 12);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(33, 20);
+            this.label32.Size = new System.Drawing.Size(21, 13);
             this.label32.TabIndex = 3;
             this.label32.Text = "ID:";
             // 
@@ -1346,7 +1284,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(790, 14);
+            this.label31.Location = new System.Drawing.Point(776, 7);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(144, 20);
             this.label31.TabIndex = 2;
@@ -1383,71 +1321,6 @@
             this.adminsDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.adminsDataGrid_CellContentClick);
             this.adminsDataGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.adminsDataGrid_PassFormat);
             // 
-            // AdminID
-            // 
-            this.AdminID.DataPropertyName = "id";
-            this.AdminID.HeaderText = "ID";
-            this.AdminID.Name = "AdminID";
-            this.AdminID.ReadOnly = true;
-            // 
-            // AdminNombre
-            // 
-            this.AdminNombre.DataPropertyName = "nombre";
-            this.AdminNombre.HeaderText = "Nombre";
-            this.AdminNombre.Name = "AdminNombre";
-            this.AdminNombre.ReadOnly = true;
-            // 
-            // AdminApellido
-            // 
-            this.AdminApellido.DataPropertyName = "apellido";
-            this.AdminApellido.HeaderText = "Apellido";
-            this.AdminApellido.Name = "AdminApellido";
-            this.AdminApellido.ReadOnly = true;
-            // 
-            // AdminDNI
-            // 
-            this.AdminDNI.DataPropertyName = "dni";
-            this.AdminDNI.HeaderText = "DNI";
-            this.AdminDNI.Name = "AdminDNI";
-            this.AdminDNI.ReadOnly = true;
-            // 
-            // AdminTelefono
-            // 
-            this.AdminTelefono.DataPropertyName = "telefono";
-            this.AdminTelefono.HeaderText = "Telefono";
-            this.AdminTelefono.Name = "AdminTelefono";
-            this.AdminTelefono.ReadOnly = true;
-            // 
-            // AdminUser
-            // 
-            this.AdminUser.DataPropertyName = "usuario";
-            this.AdminUser.HeaderText = "Usuario";
-            this.AdminUser.Name = "AdminUser";
-            this.AdminUser.ReadOnly = true;
-            // 
-            // AdminContra
-            // 
-            this.AdminContra.DataPropertyName = "contraseña";
-            this.AdminContra.HeaderText = "Contraseña";
-            this.AdminContra.Name = "AdminContra";
-            this.AdminContra.ReadOnly = true;
-            // 
-            // AdminEditar
-            // 
-            this.AdminEditar.HeaderText = "Editar";
-            this.AdminEditar.Name = "AdminEditar";
-            this.AdminEditar.Text = "Editar";
-            this.AdminEditar.ToolTipText = "Editar";
-            this.AdminEditar.UseColumnTextForButtonValue = true;
-            // 
-            // AdminEliminar
-            // 
-            this.AdminEliminar.HeaderText = "Eliminar";
-            this.AdminEliminar.Name = "AdminEliminar";
-            this.AdminEliminar.Text = "Eliminar";
-            this.AdminEliminar.ToolTipText = "Eliminar";
-            this.AdminEliminar.UseColumnTextForButtonValue = true;
-            // 
             // autores
             // 
             this.autores.Controls.Add(this.resetAutor);
@@ -1472,10 +1345,10 @@
             // 
             // resetAutor
             // 
-            this.resetAutor.Location = new System.Drawing.Point(921, 281);
+            this.resetAutor.Location = new System.Drawing.Point(921, 269);
             this.resetAutor.Margin = new System.Windows.Forms.Padding(2);
             this.resetAutor.Name = "resetAutor";
-            this.resetAutor.Size = new System.Drawing.Size(136, 19);
+            this.resetAutor.Size = new System.Drawing.Size(109, 32);
             this.resetAutor.TabIndex = 33;
             this.resetAutor.Text = "Reset";
             this.resetAutor.UseVisualStyleBackColor = true;
@@ -1483,10 +1356,10 @@
             // 
             // guardarAutor
             // 
-            this.guardarAutor.Location = new System.Drawing.Point(779, 281);
+            this.guardarAutor.Location = new System.Drawing.Point(808, 269);
             this.guardarAutor.Margin = new System.Windows.Forms.Padding(2);
             this.guardarAutor.Name = "guardarAutor";
-            this.guardarAutor.Size = new System.Drawing.Size(136, 19);
+            this.guardarAutor.Size = new System.Drawing.Size(109, 32);
             this.guardarAutor.TabIndex = 32;
             this.guardarAutor.Text = "Guardar";
             this.guardarAutor.UseVisualStyleBackColor = true;
@@ -1653,6 +1526,177 @@
             this.logout.UseVisualStyleBackColor = true;
             this.logout.Click += new System.EventHandler(this.logout_Click);
             // 
+            // AdminID
+            // 
+            this.AdminID.DataPropertyName = "id";
+            this.AdminID.HeaderText = "ID";
+            this.AdminID.Name = "AdminID";
+            this.AdminID.ReadOnly = true;
+            // 
+            // AdminNombre
+            // 
+            this.AdminNombre.DataPropertyName = "nombre";
+            this.AdminNombre.HeaderText = "Nombre";
+            this.AdminNombre.Name = "AdminNombre";
+            this.AdminNombre.ReadOnly = true;
+            // 
+            // AdminApellido
+            // 
+            this.AdminApellido.DataPropertyName = "apellido";
+            this.AdminApellido.HeaderText = "Apellido";
+            this.AdminApellido.Name = "AdminApellido";
+            this.AdminApellido.ReadOnly = true;
+            // 
+            // AdminDNI
+            // 
+            this.AdminDNI.DataPropertyName = "dni";
+            this.AdminDNI.HeaderText = "DNI";
+            this.AdminDNI.Name = "AdminDNI";
+            this.AdminDNI.ReadOnly = true;
+            // 
+            // AdminTelefono
+            // 
+            this.AdminTelefono.DataPropertyName = "telefono";
+            this.AdminTelefono.HeaderText = "Telefono";
+            this.AdminTelefono.Name = "AdminTelefono";
+            this.AdminTelefono.ReadOnly = true;
+            // 
+            // AdminUser
+            // 
+            this.AdminUser.DataPropertyName = "usuario";
+            this.AdminUser.HeaderText = "Usuario";
+            this.AdminUser.Name = "AdminUser";
+            this.AdminUser.ReadOnly = true;
+            // 
+            // AdminContra
+            // 
+            this.AdminContra.DataPropertyName = "clave";
+            this.AdminContra.HeaderText = "Contraseña";
+            this.AdminContra.Name = "AdminContra";
+            this.AdminContra.ReadOnly = true;
+            // 
+            // AdminEditar
+            // 
+            this.AdminEditar.HeaderText = "Editar";
+            this.AdminEditar.Name = "AdminEditar";
+            this.AdminEditar.Text = "Editar";
+            this.AdminEditar.ToolTipText = "Editar";
+            this.AdminEditar.UseColumnTextForButtonValue = true;
+            // 
+            // AdminEliminar
+            // 
+            this.AdminEliminar.HeaderText = "Eliminar";
+            this.AdminEliminar.Name = "AdminEliminar";
+            this.AdminEliminar.Text = "Eliminar";
+            this.AdminEliminar.ToolTipText = "Eliminar";
+            this.AdminEliminar.UseColumnTextForButtonValue = true;
+            // 
+            // idPrestamo
+            // 
+            this.idPrestamo.DataPropertyName = "id";
+            this.idPrestamo.HeaderText = "ID";
+            this.idPrestamo.Name = "idPrestamo";
+            this.idPrestamo.ReadOnly = true;
+            // 
+            // ID_CLIENTE
+            // 
+            this.ID_CLIENTE.DataPropertyName = "id_cliente";
+            this.ID_CLIENTE.HeaderText = "ID Cliente";
+            this.ID_CLIENTE.Name = "ID_CLIENTE";
+            this.ID_CLIENTE.Visible = false;
+            // 
+            // ID_LIBRO
+            // 
+            this.ID_LIBRO.DataPropertyName = "id_libro";
+            this.ID_LIBRO.HeaderText = "ID Libro";
+            this.ID_LIBRO.Name = "ID_LIBRO";
+            this.ID_LIBRO.Visible = false;
+            // 
+            // ID_ADMIN
+            // 
+            this.ID_ADMIN.DataPropertyName = "id_admin";
+            this.ID_ADMIN.HeaderText = "ID Admin";
+            this.ID_ADMIN.Name = "ID_ADMIN";
+            this.ID_ADMIN.Visible = false;
+            // 
+            // cliente
+            // 
+            this.cliente.DataPropertyName = "cliente";
+            this.cliente.HeaderText = "Cliente";
+            this.cliente.Name = "cliente";
+            this.cliente.ReadOnly = true;
+            // 
+            // libro
+            // 
+            this.libro.DataPropertyName = "libro";
+            this.libro.HeaderText = "Libro";
+            this.libro.Name = "libro";
+            this.libro.ReadOnly = true;
+            // 
+            // fechaPrestamo
+            // 
+            this.fechaPrestamo.DataPropertyName = "fechaPrestamo";
+            this.fechaPrestamo.HeaderText = "Fecha Préstamo";
+            this.fechaPrestamo.Name = "fechaPrestamo";
+            this.fechaPrestamo.ReadOnly = true;
+            // 
+            // fechaDevolucion
+            // 
+            this.fechaDevolucion.DataPropertyName = "fechaDevolucion";
+            this.fechaDevolucion.HeaderText = "Fecha Devolución";
+            this.fechaDevolucion.Name = "fechaDevolucion";
+            this.fechaDevolucion.ReadOnly = true;
+            // 
+            // devuelto
+            // 
+            this.devuelto.DataPropertyName = "devuelto";
+            this.devuelto.HeaderText = "Devuelto";
+            this.devuelto.Name = "devuelto";
+            this.devuelto.ReadOnly = true;
+            // 
+            // admin
+            // 
+            this.admin.DataPropertyName = "admin";
+            this.admin.HeaderText = "Administrador";
+            this.admin.Name = "admin";
+            this.admin.ReadOnly = true;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.HeaderText = "Editar";
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.ReadOnly = true;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseColumnTextForButtonValue = true;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.HeaderText = "Eliminar";
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.ReadOnly = true;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseColumnTextForButtonValue = true;
+            // 
+            // txtDatosPrestamo
+            // 
+            this.txtDatosPrestamo.Location = new System.Drawing.Point(185, 281);
+            this.txtDatosPrestamo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDatosPrestamo.Name = "txtDatosPrestamo";
+            this.txtDatosPrestamo.Size = new System.Drawing.Size(587, 20);
+            this.txtDatosPrestamo.TabIndex = 49;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(2, 281);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(178, 20);
+            this.btnBuscar.TabIndex = 50;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1791,17 +1835,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dni;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idPrestamo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_CLIENTE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_LIBRO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn libro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaPrestamo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDevolucion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn devuelto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn administrador;
-        private System.Windows.Forms.DataGridViewButtonColumn btnEditar;
-        private System.Windows.Forms.DataGridViewButtonColumn btnEliminar;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.DataGridView adminsDataGrid;
         public System.Windows.Forms.Label label38;
@@ -1830,6 +1863,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn AdminContra;
         private System.Windows.Forms.DataGridViewButtonColumn AdminEditar;
         private System.Windows.Forms.DataGridViewButtonColumn AdminEliminar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPrestamo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_CLIENTE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_LIBRO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_ADMIN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn libro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaPrestamo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDevolucion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn devuelto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn admin;
+        private System.Windows.Forms.DataGridViewButtonColumn btnEditar;
+        private System.Windows.Forms.DataGridViewButtonColumn btnEliminar;
+        public System.Windows.Forms.Button btnBuscar;
+        public System.Windows.Forms.TextBox txtDatosPrestamo;
     }
 }
 

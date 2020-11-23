@@ -15,11 +15,11 @@ namespace final.models
         public Libro libro;
         public Administrador administrador;
 
-        public Prestamo(Cliente cliente, Libro libro)
+        public Prestamo(Cliente cliente, Libro libro, Administrador administrador)
         {
             this.cliente = cliente;
             this.libro = libro;
-            //this.administrador = administrador;
+            this.administrador = administrador;
         }
 
     }
