@@ -973,6 +973,7 @@
             this.clienteReset.TabIndex = 45;
             this.clienteReset.Text = "Reset";
             this.clienteReset.UseVisualStyleBackColor = true;
+            this.clienteReset.Click += new System.EventHandler(this.clienteReset_Click);
             // 
             // clienteGuardar
             // 

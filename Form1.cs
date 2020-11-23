@@ -758,5 +758,16 @@ namespace final
         {
             checkLibro();
         }
+
+        private void clienteReset_Click(object sender, EventArgs e)
+        {
+            cliente0.Text = "";
+            cliente1.Text = "";
+            cliente2.Text = "";
+            cliente3.Text = "";
+            cliente4.Text = "";
+            cliente5.Text = "";
+            cliente6.Text = "";
+        }
     }
 }
