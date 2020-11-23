@@ -42,7 +42,7 @@ namespace final.daos
             }
             else
             {
-                mySqlCommand = new MySqlCommand("SELECT * FROM clientes WHERE dni LIKE '%" + text + "%'", Connection.GetInstance());
+                mySqlCommand = new MySqlCommand("SELECT * FROM clientes WHERE CONCAT(nombre, ' ', apellido, ' ', domicilio, ' ', telefono, ' ', fechaNacimiento, ' ', dni) LIKE '%" + text + "%'", Connection.GetInstance());
             }
             MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter();
             mySqlDataAdapter.SelectCommand = mySqlCommand;

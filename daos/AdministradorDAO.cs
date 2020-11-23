@@ -41,7 +41,7 @@ namespace final.daos
             }
             else
             {
-                mySqlCommand = new MySqlCommand("SELECT * FROM administrador WHERE CONCAT(nombre, '', apellido) LIKE '%" + text + "%'", Connection.GetInstance());
+                mySqlCommand = new MySqlCommand("SELECT * FROM administrador WHERE CONCAT(nombre, ' ', apellido, ' ', telefono, ' ', dni, ' ', usuario) LIKE '%" + text + "%'", Connection.GetInstance());
             }
             MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter();
             mySqlDataAdapter.SelectCommand = mySqlCommand;

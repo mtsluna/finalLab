@@ -42,7 +42,7 @@ namespace final.daos
             }
             else
             {
-                mySqlCommand = new MySqlCommand("SELECT * FROM libros WHERE titulo LIKE '%" + text + "%'", Connection.GetInstance());
+                mySqlCommand = new MySqlCommand("SELECT * FROM libros INNER JOIN autor as au ON libros.fk_autor = au.id WHERE CONCAT(titulo, ' ', edicion, ' ', lugarPublicacion, ' ', año, ' ', paginas, ' ', isbn, ' ', au.nombre, ' ', au.apellido) LIKE '%" + text + "%'", Connection.GetInstance());
             }            
             MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter();
             mySqlDataAdapter.SelectCommand = mySqlCommand;
