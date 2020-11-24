@@ -1,5 +1,18 @@
+/*
+SQLyog Ultimate v13.1.1 (64 bit)
+MySQL - 8.0.19 : Database - finallab2
+*********************************************************************
+*/
 
-CREATE DATABASE `finallab2`;
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`finallab2` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 
 USE `finallab2`;
 
@@ -9,14 +22,14 @@ DROP TABLE IF EXISTS `administrador`;
 
 CREATE TABLE `administrador` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(20) DEFAULT NULL,
-  `apellido` varchar(20) DEFAULT NULL,
-  `telefono` varchar(15) DEFAULT NULL,
-  `dni` varchar(15) DEFAULT NULL,
-  `usuario` varchar(20) NOT NULL,
-  `contraseña` varchar(20) NOT NULL,
+  `nombre` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `apellido` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `telefono` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `dni` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `usuario` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `clave` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 /*Data for the table `administrador` */
 
@@ -26,16 +39,12 @@ DROP TABLE IF EXISTS `autor`;
 
 CREATE TABLE `autor` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(20) DEFAULT NULL,
-  `apellido` varchar(20) DEFAULT NULL,
+  `nombre` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `apellido` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 /*Data for the table `autor` */
-
-insert  into `autor`(`id`,`nombre`,`apellido`) values 
-(1,'Matias','Lunaa'),
-(2,'Constanza','Uno');
 
 /*Table structure for table `clientes` */
 
@@ -43,21 +52,16 @@ DROP TABLE IF EXISTS `clientes`;
 
 CREATE TABLE `clientes` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(20)  DEFAULT NULL,
-  `apellido` varchar(20) DEFAULT NULL,
-  `domicilio` varchar(50) DEFAULT NULL,
-  `telefono` varchar(15) DEFAULT NULL,
+  `nombre` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `apellido` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `domicilio` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `telefono` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `fechaNacimiento` date DEFAULT NULL,
-  `dni` varchar(15) DEFAULT NULL,
+  `dni` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 /*Data for the table `clientes` */
-
-insert  into `clientes`(`id`,`nombre`,`apellido`,`domicilio`,`telefono`,`fechaNacimiento`,`dni`) values 
-(1,'Constanzaa','Unoo','Sanma 1922','2615676357','2000-03-10','42562478'),
-(2,'Constanza','Uno','Sanma 1922','2615676357','2000-03-10','42562478'),
-(3,'Constanza','Uno','Sanma 1922','2615676357','2000-03-10','41659894');
 
 /*Table structure for table `libros` */
 
@@ -65,24 +69,20 @@ DROP TABLE IF EXISTS `libros`;
 
 CREATE TABLE `libros` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `titulo` varchar(30) DEFAULT NULL,
-  `edicion` varchar(10) DEFAULT NULL,
-  `lugarPublicacion` varchar(30) DEFAULT NULL,
+  `titulo` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `edicion` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `lugarPublicacion` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `año` date DEFAULT NULL,
   `paginas` int DEFAULT NULL,
-  `isbn` varchar(17) DEFAULT NULL,
+  `isbn` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `fk_autor` int DEFAULT NULL,
   `descripcion` text,
   PRIMARY KEY (`id`),
   KEY `fk_autor` (`fk_autor`),
   CONSTRAINT `fk_autor` FOREIGN KEY (`fk_autor`) REFERENCES `autor` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 /*Data for the table `libros` */
-
-insert  into `libros`(`id`,`titulo`,`edicion`,`lugarPublicacion`,`año`,`paginas`,`isbn`,`fk_autor`,`descripcion`) values 
-(3,'Principito','1','Argentina','2020-11-11',511,'9789381753422',1,'The best libro ever'),
-(4,'Principito','1','Argentina','2020-11-11',511,'9789381753422',1,'The best libro ever');
 
 /*Table structure for table `prestamos` */
 
@@ -103,7 +103,7 @@ CREATE TABLE `prestamos` (
   CONSTRAINT `fk_administrador` FOREIGN KEY (`fk_administrador`) REFERENCES `administrador` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_cliente` FOREIGN KEY (`fk_cliente`) REFERENCES `clientes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_libro` FOREIGN KEY (`fk_libro`) REFERENCES `libros` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 /*Data for the table `prestamos` */
 
