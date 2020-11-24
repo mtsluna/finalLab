@@ -9,4 +9,4 @@
 * Biblioteca
 
 ## Diagrama de Clases
-![Diagrama de clases biblioteca](diagram.png)
+![Diagrama de clases biblioteca](new.png)
