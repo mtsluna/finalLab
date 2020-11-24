@@ -19,7 +19,7 @@ Sistema para Biblioteca (Administrador de libros, Administrador de clientes y Ad
 ## Documentacion
 El sistema cuenta con multiples funcionalidades para administrar el uso de una biblioteca basica contando asi con los siguientes CRUDS:
 * Administradores
-![Diagrama de clases biblioteca](admin_captura.png)
+![Diagrama de clases biblioteca](doc/admin_captura.png)
 
 * Autores
 ![Diagrama de clases biblioteca](doc/autores_captura.png)
