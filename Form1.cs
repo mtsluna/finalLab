@@ -51,10 +51,10 @@ namespace final
 
             resetPrestamo();
 
-            checkAutor();
-            checkAdmin();
-            checkCliente();
-            checkLibro();
+            checkAutor(null, null);
+            checkAdmin(null, null);
+            checkCliente(null, null);
+            checkLibro(null, null);
         }
 
         //LIBROS
@@ -601,7 +601,7 @@ namespace final
         }
 
         //Validations
-        public void checkAutor()
+        public void checkAutor(object sender, EventArgs e)
         {
             if (!autor1.Text.Equals("") && !autor2.Text.Equals(""))
             {
@@ -613,7 +613,7 @@ namespace final
             }
         }
 
-        public void checkAdmin()
+        public void checkAdmin(object sender, EventArgs e)
         {
             if (!inputApellidoAdmin.Text.Equals("") && !inputContraAdmin.Text.Equals("") && !inputDniAdmin.Text.Equals("") && !inputNombreAdmin.Text.Equals("") && !inputTelefonoAdmin.Text.Equals("") && !inputUserAdmin.Text.Equals(""))
             {
@@ -625,7 +625,7 @@ namespace final
             }
         }
 
-        public void checkCliente()
+        public void checkCliente(object sender, EventArgs e)
         {
             if (!cliente1.Text.Equals("") && !cliente2.Text.Equals("") && !cliente3.Text.Equals("") && !cliente4.Text.Equals("") && !cliente5.Text.Equals("") && !cliente6.Text.Equals(""))
             {
@@ -637,7 +637,7 @@ namespace final
             }
         }
 
-        public void checkLibro()
+        public void checkLibro(object sender, EventArgs e)
         {
             if (!libro1.Text.Equals("") && !libro2.Text.Equals("") && !libro3.Text.Equals("") && !libro4.Text.Equals("") && !autoresEnLibros.SelectedItem.Equals("") && !libro6.Text.Equals("") && !libro7.Text.Equals("") && !libro8.Text.Equals(""))
             {
@@ -647,117 +647,7 @@ namespace final
             {
                 saveLibro.Enabled = false;
             }
-        }
-
-        private void autor1_TextChanged(object sender, EventArgs e)
-        {
-            checkAutor();
-        }
-
-        private void autor2_TextChanged(object sender, EventArgs e)
-        {
-            checkAutor();
-        }
-
-        private void inputNombreAdmin_TextChanged(object sender, EventArgs e)
-        {
-            checkAdmin();
-        }
-
-        private void inputApellidoAdmin_TextChanged(object sender, EventArgs e)
-        {
-            checkAdmin();
-        }
-
-        private void inputDniAdmin_TextChanged(object sender, EventArgs e)
-        {
-            checkAdmin();
-        }
-
-        private void inputTelefonoAdmin_TextChanged(object sender, EventArgs e)
-        {
-            checkAdmin();
-        }
-
-        private void inputUserAdmin_TextChanged(object sender, EventArgs e)
-        {
-            checkAdmin();
-        }
-
-        private void inputContraAdmin_TextChanged(object sender, EventArgs e)
-        {
-            checkAdmin();
-        }
-
-        private void cliente1_TextChanged(object sender, EventArgs e)
-        {
-            checkCliente();
-        }
-
-        private void cliente2_TextChanged(object sender, EventArgs e)
-        {
-            checkCliente();
-        }
-
-        private void cliente3_TextChanged(object sender, EventArgs e)
-        {
-            checkCliente();
-        }
-
-        private void cliente4_TextChanged(object sender, EventArgs e)
-        {
-            checkCliente();
-        }
-
-        private void cliente5_ValueChanged(object sender, EventArgs e)
-        {
-            checkCliente();
-        }
-
-        private void cliente6_TextChanged(object sender, EventArgs e)
-        {
-            checkCliente();
-        }
-
-        private void libro1_TextChanged(object sender, EventArgs e)
-        {
-            checkLibro();
-        }
-
-        private void libro6_TextChanged(object sender, EventArgs e)
-        {
-            checkLibro();
-        }
-
-        private void libro3_ValueChanged(object sender, EventArgs e)
-        {
-            checkLibro();
-        }
-
-        private void autoresEnLibros_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            checkLibro();
-        }
-
-        private void libro4_TextChanged(object sender, EventArgs e)
-        {
-            checkLibro();
-        }
-
-        private void libro7_TextChanged(object sender, EventArgs e)
-        {
-            checkLibro();
-        }
-
-        private void libro2_TextChanged(object sender, EventArgs e)
-        {
-            checkLibro();
-        }
-
-        private void libro8_TextChanged(object sender, EventArgs e)
-        {
-            checkLibro();
-        }
+        }        
 
         private void clienteReset_Click(object sender, EventArgs e)
         {

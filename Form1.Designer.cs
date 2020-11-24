@@ -635,7 +635,7 @@
             this.libro8.Name = "libro8";
             this.libro8.Size = new System.Drawing.Size(281, 22);
             this.libro8.TabIndex = 21;
-            this.libro8.TextChanged += new System.EventHandler(this.libro8_TextChanged);
+            this.libro8.TextChanged += new System.EventHandler(this.checkLibro);
             // 
             // buscarLibros
             // 
@@ -665,7 +665,7 @@
             this.autoresEnLibros.Name = "autoresEnLibros";
             this.autoresEnLibros.Size = new System.Drawing.Size(281, 24);
             this.autoresEnLibros.TabIndex = 18;
-            this.autoresEnLibros.SelectedIndexChanged += new System.EventHandler(this.autoresEnLibros_SelectedIndexChanged);
+            this.autoresEnLibros.SelectedIndexChanged += new System.EventHandler(this.checkLibro);
             // 
             // saveLibro
             // 
@@ -685,7 +685,7 @@
             this.libro7.Name = "libro7";
             this.libro7.Size = new System.Drawing.Size(108, 22);
             this.libro7.TabIndex = 16;
-            this.libro7.TextChanged += new System.EventHandler(this.libro7_TextChanged);
+            this.libro7.TextChanged += new System.EventHandler(this.checkLibro);
             // 
             // libro2
             // 
@@ -694,7 +694,7 @@
             this.libro2.Name = "libro2";
             this.libro2.Size = new System.Drawing.Size(225, 22);
             this.libro2.TabIndex = 15;
-            this.libro2.TextChanged += new System.EventHandler(this.libro2_TextChanged);
+            this.libro2.TextChanged += new System.EventHandler(this.checkLibro);
             // 
             // libro4
             // 
@@ -703,7 +703,7 @@
             this.libro4.Name = "libro4";
             this.libro4.Size = new System.Drawing.Size(103, 22);
             this.libro4.TabIndex = 14;
-            this.libro4.TextChanged += new System.EventHandler(this.libro4_TextChanged);
+            this.libro4.TextChanged += new System.EventHandler(this.checkLibro);
             this.libro4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressIsNumber);
             // 
             // libro3
@@ -713,7 +713,7 @@
             this.libro3.Name = "libro3";
             this.libro3.Size = new System.Drawing.Size(281, 22);
             this.libro3.TabIndex = 13;
-            this.libro3.ValueChanged += new System.EventHandler(this.libro3_ValueChanged);
+            this.libro3.ValueChanged += new System.EventHandler(this.checkLibro);
             // 
             // libro6
             // 
@@ -722,7 +722,7 @@
             this.libro6.Name = "libro6";
             this.libro6.Size = new System.Drawing.Size(281, 22);
             this.libro6.TabIndex = 10;
-            this.libro6.TextChanged += new System.EventHandler(this.libro6_TextChanged);
+            this.libro6.TextChanged += new System.EventHandler(this.checkLibro);
             // 
             // label8
             // 
@@ -804,7 +804,7 @@
             this.libro1.Name = "libro1";
             this.libro1.Size = new System.Drawing.Size(281, 22);
             this.libro1.TabIndex = 1;
-            this.libro1.TextChanged += new System.EventHandler(this.libro1_TextChanged);
+            this.libro1.TextChanged += new System.EventHandler(this.checkLibro);
             // 
             // librosDataGrid
             // 
@@ -962,7 +962,7 @@
             this.cliente4.Name = "cliente4";
             this.cliente4.Size = new System.Drawing.Size(281, 22);
             this.cliente4.TabIndex = 46;
-            this.cliente4.TextChanged += new System.EventHandler(this.cliente4_TextChanged);
+            this.cliente4.TextChanged += new System.EventHandler(this.checkCliente);
             // 
             // clienteReset
             // 
@@ -1011,7 +1011,7 @@
             this.cliente6.Name = "cliente6";
             this.cliente6.Size = new System.Drawing.Size(281, 22);
             this.cliente6.TabIndex = 37;
-            this.cliente6.TextChanged += new System.EventHandler(this.cliente6_TextChanged);
+            this.cliente6.TextChanged += new System.EventHandler(this.checkCliente);
             // 
             // cliente3
             // 
@@ -1020,7 +1020,7 @@
             this.cliente3.Name = "cliente3";
             this.cliente3.Size = new System.Drawing.Size(281, 22);
             this.cliente3.TabIndex = 36;
-            this.cliente3.TextChanged += new System.EventHandler(this.cliente3_TextChanged);
+            this.cliente3.TextChanged += new System.EventHandler(this.checkCliente);
             // 
             // cliente5
             // 
@@ -1029,7 +1029,7 @@
             this.cliente5.Name = "cliente5";
             this.cliente5.Size = new System.Drawing.Size(263, 22);
             this.cliente5.TabIndex = 35;
-            this.cliente5.ValueChanged += new System.EventHandler(this.cliente5_ValueChanged);
+            this.cliente5.ValueChanged += new System.EventHandler(this.checkCliente);
             // 
             // cliente2
             // 
@@ -1038,7 +1038,7 @@
             this.cliente2.Name = "cliente2";
             this.cliente2.Size = new System.Drawing.Size(281, 22);
             this.cliente2.TabIndex = 34;
-            this.cliente2.TextChanged += new System.EventHandler(this.cliente2_TextChanged);
+            this.cliente2.TextChanged += new System.EventHandler(this.checkCliente);
             // 
             // label16
             // 
@@ -1111,7 +1111,7 @@
             this.cliente1.Name = "cliente1";
             this.cliente1.Size = new System.Drawing.Size(281, 22);
             this.cliente1.TabIndex = 25;
-            this.cliente1.TextChanged += new System.EventHandler(this.cliente1_TextChanged);
+            this.cliente1.TextChanged += new System.EventHandler(this.checkCliente);
             // 
             // button1
             // 
@@ -1334,7 +1334,7 @@
             this.inputContraAdmin.PasswordChar = '*';
             this.inputContraAdmin.Size = new System.Drawing.Size(281, 22);
             this.inputContraAdmin.TabIndex = 39;
-            this.inputContraAdmin.TextChanged += new System.EventHandler(this.inputContraAdmin_TextChanged);
+            this.inputContraAdmin.TextChanged += new System.EventHandler(this.checkAdmin);
             // 
             // inputUserAdmin
             // 
@@ -1343,7 +1343,7 @@
             this.inputUserAdmin.Name = "inputUserAdmin";
             this.inputUserAdmin.Size = new System.Drawing.Size(281, 22);
             this.inputUserAdmin.TabIndex = 38;
-            this.inputUserAdmin.TextChanged += new System.EventHandler(this.inputUserAdmin_TextChanged);
+            this.inputUserAdmin.TextChanged += new System.EventHandler(this.checkAdmin);
             // 
             // inputTelefonoAdmin
             // 
@@ -1352,7 +1352,7 @@
             this.inputTelefonoAdmin.Name = "inputTelefonoAdmin";
             this.inputTelefonoAdmin.Size = new System.Drawing.Size(281, 22);
             this.inputTelefonoAdmin.TabIndex = 37;
-            this.inputTelefonoAdmin.TextChanged += new System.EventHandler(this.inputTelefonoAdmin_TextChanged);
+            this.inputTelefonoAdmin.TextChanged += new System.EventHandler(this.checkAdmin);
             // 
             // inputDniAdmin
             // 
@@ -1361,7 +1361,7 @@
             this.inputDniAdmin.Name = "inputDniAdmin";
             this.inputDniAdmin.Size = new System.Drawing.Size(281, 22);
             this.inputDniAdmin.TabIndex = 36;
-            this.inputDniAdmin.TextChanged += new System.EventHandler(this.inputDniAdmin_TextChanged);
+            this.inputDniAdmin.TextChanged += new System.EventHandler(this.checkAdmin);
             // 
             // inputApellidoAdmin
             // 
@@ -1370,7 +1370,7 @@
             this.inputApellidoAdmin.Name = "inputApellidoAdmin";
             this.inputApellidoAdmin.Size = new System.Drawing.Size(281, 22);
             this.inputApellidoAdmin.TabIndex = 35;
-            this.inputApellidoAdmin.TextChanged += new System.EventHandler(this.inputApellidoAdmin_TextChanged);
+            this.inputApellidoAdmin.TextChanged += new System.EventHandler(this.checkAdmin);
             // 
             // inputNombreAdmin
             // 
@@ -1379,7 +1379,7 @@
             this.inputNombreAdmin.Name = "inputNombreAdmin";
             this.inputNombreAdmin.Size = new System.Drawing.Size(281, 22);
             this.inputNombreAdmin.TabIndex = 34;
-            this.inputNombreAdmin.TextChanged += new System.EventHandler(this.inputNombreAdmin_TextChanged);
+            this.inputNombreAdmin.TextChanged += new System.EventHandler(this.checkAdmin);
             // 
             // label38
             // 
@@ -1653,7 +1653,7 @@
             this.autor2.Name = "autor2";
             this.autor2.Size = new System.Drawing.Size(281, 22);
             this.autor2.TabIndex = 29;
-            this.autor2.TextChanged += new System.EventHandler(this.autor2_TextChanged);
+            this.autor2.TextChanged += new System.EventHandler(this.checkAutor);
             // 
             // autoresDataGrid
             // 
@@ -1754,7 +1754,7 @@
             this.autor1.Name = "autor1";
             this.autor1.Size = new System.Drawing.Size(281, 22);
             this.autor1.TabIndex = 25;
-            this.autor1.TextChanged += new System.EventHandler(this.autor1_TextChanged);
+            this.autor1.TextChanged += new System.EventHandler(this.checkAutor);
             // 
             // Form1
             // 
