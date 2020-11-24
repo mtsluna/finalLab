@@ -105,6 +105,7 @@ namespace final
             }
             refreshLibros();
             rellenarComboLibros();
+            resetLibro_Click(null, null);
         }
 
         private void resetLibro_Click(object sender, EventArgs e)
@@ -246,6 +247,7 @@ namespace final
             }
             refreshAutores();
             rellenarComboAutor();
+            resetAutor_Click(null, null);
         }
 
         //ADMINISTRADORES
@@ -557,6 +559,7 @@ namespace final
             }
             refreshCliente();
             rellenarComboClientes();
+            clienteReset_Click(null, null);
         }
 
         public void deleteCliente(int index)
